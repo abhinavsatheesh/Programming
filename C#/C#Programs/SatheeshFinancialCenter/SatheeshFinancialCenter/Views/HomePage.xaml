@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="SatheeshFinancialCenter.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="using:SatheeshFinancialCenter.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:HomeViewModel}"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock>Hi! Welcome to Satheesh Financial Center</TextBlock>
+        <TextBlock>We provide all sorts of financial help ranging from Accountancy, GST and Income Tax Calculation</TextBlock>
+        <TextBlock></TextBlock>
+        <HyperlinkButton NavigateUri="https://www.google.com/maps/dir/9.9670247,76.2858222/Ramakrishna+Institute+of+Typewriting,+M.G.+Road,+ernakulam,+Kochi,+Kerala+682016/@9.9671422,76.2858283,397m/data=!3m1!1e3!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3b0872b176a096d5:0x34323464ce3d2146!2m2!1d76.2858437!2d9.9669539!3e3">Visit our Office Now!</HyperlinkButton>
+        <TextBlock></TextBlock>
+        <TextBlock>Open from 10:00 AM to 5:30 PM</TextBlock>
+        <TextBlock></TextBlock>
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Get quick solutions to your Queries</TextBlock>
+        <Button Click="Button_Click">Accountancy</Button>
+    </StackPanel>
+        
+</Page>

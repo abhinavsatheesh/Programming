@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PasswordGenerator": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\abhinavsatheesh\\C#\\C#Programs\\PasswordGenerator\\PasswordGenerator"
+    }
+  }
+}

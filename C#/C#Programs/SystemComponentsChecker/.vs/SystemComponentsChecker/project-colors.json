@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "535cd232-259e-4291-8aa5-3ff004d5a8aa": {
+      "ProjectGuid": "535cd232-259e-4291-8aa5-3ff004d5a8aa",
+      "DisplayName": "SystemComponentsChecker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

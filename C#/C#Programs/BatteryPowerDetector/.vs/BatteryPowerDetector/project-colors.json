@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "310231a8-1f82-4270-a016-dbc2f71efd2b": {
+      "ProjectGuid": "310231a8-1f82-4270-a016-dbc2f71efd2b",
+      "DisplayName": "BatteryPowerDetector",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

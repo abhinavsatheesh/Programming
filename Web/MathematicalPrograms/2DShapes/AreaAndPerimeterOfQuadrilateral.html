@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Area and Perimeter of Quadrilateral</title>
+</head>
+<body>
+
+<h1>Perimeter of Quadrilateral</h1>
+<form>
+  <label for="side1">Enter the length of 1st Side</label>
+  <input type="text" id="side1" name="side1"></input><br><br>
+  <label for="side2">Enter the length of 2nd Side</label>
+  <input type="text" id="side2" name="side2"></input><br><br>
+  <label for="side3">Enter the length of 3rd Side</label>
+  <input type="text" id="side3" name="side3"></input><br><br>
+  <label for="side4">Enter the length of 4th Side</label>
+  <input type="text" id="side4" name="side4"></input><br><br>
+<script>
+function processperimeter() {
+  var side1ofquad = parseInt(document.getElementById("side1").value)
+  var side2ofquad = parseInt(document.getElementById("side2").value)
+  var side3ofquad = parseInt(document.getElementById("side3").value)
+  var side4ofquad = parseInt(document.getElementById("side4").value)
+  var perimeterofquad = parseInt(side1ofquad+side2ofquad+side3ofquad+side4ofquad)
+  alert("Perimeter of Quadrilateral is " + perimeterofquad)
+}
+</script>
+<button onclick=processperimeter()>Submit</button> 
+</form>
+
+<h1>Area of Quadrilateral</h1>.
+<form>
+  <label for="length">Enter the length of Diagonal</label>
+  <input type="text" id="length" name="length"></input><br><br>
+  <label for="altitude1">Enter the 1st Altitude</label>
+  <input type="text" id="altitude1" name="altitude1"></input><br><br>
+  <label for="altitude2">Enter the 2nd Altitude</label>
+  <input type="text" id="altitude2" name="altitude2"></input><br><br>
+
+<script>
+function processarea() {
+  var lengthofquad = parseInt(document.getElementById("length").value)
+  var altitude1ofquad = parseInt(document.getElementById("altitude1").value)
+  var altitude2ofquad = parseInt(document.getElementById("altitude2").value)
+  var dss=lengthofquad/2
+  var hss=altitude1ofquad+altitude2ofquad
+  var area=dss*hss
+  alert("Area of Quadrilateral is " + area)
+}
+</script>
+<button onclick=processarea()>Submit</button> 
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Volume of Cube</title>
+</head>
+<body>
+
+<h1>Base Area - Height Method</h1>
+<form>
+  <label for="basearea">Enter the Base Area of the Cube</label>
+  <input type="text" id="basearea" name="basearea"></input><br><br>
+  <label for="height">Enter a Height measure</label>
+  <input type="text" id="height" name="height"></input><br><br>
+ 
+<script>
+function processbaseareaheight() {
+  var baseareaofcube = parseInt(document.getElementById("basearea").value)
+  var heightofcube = parseInt(document.getElementById("height").value)
+  var volume = parseInt(baseareaofcube*heightofcube)
+  alert("Volume of the Cube is " + volume + " cm cube")
+}
+</script>
+<button onclick=processbaseareaheight()>Submit</button>
+</form>
+
+<h1>Side Method</h1>
+<form>
+  <label for="side">Enter the measure of the Side</label>
+  <input type="text" id="side" name="side"></input><br><br>
+<script>
+function processside() {
+  var sideofcube = parseInt(document.getElementById("side").value)
+  var volume = parseInt(sideofcube*sideofcube*sideofcube)
+  alert("Volume of the Cube is " + volume + " cm cube")
+}
+</script>
+<button onclick=processside()>Submit</button>
+</form>
+</body>
+</html>

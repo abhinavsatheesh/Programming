@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Area and Perimeter of Rhombus</title>
+</head>
+<body>
+
+<h1>Area of Rhombus</h1>
+<form>
+  <label for="diagonal1">Enter the length of Diagonal 1</label>
+  <input type="text" id="diagonal1" name="diagonal1"></input><br><br>
+  <label for="diagonal2">Enter the length of Diagonal 2</label>
+  <input type="text" id="diagonal2" name="diagonal2"></input><br><br>
+<script>
+function area() {
+  var diagonal1ofrhombus = parseInt(document.getElementById("diagonal1").value)
+  var diagonal2ofrhombus = parseInt(document.getElementById("diagonal2").value)
+  var areaofrhombus = parseInt(0.5*diagonal1ofrhombus*diagonal2ofrhombus)
+  alert("Area of Rhombus is " + areaofrhombus + " sq.cm.")  
+}
+</script>
+<button onclick=area()>Submit</button>
+</form>
+
+<h1>Perimeter of Rhombus</h1>
+<form>
+  <label for="side">Enter the side of the Rhombus</label>
+  <input type="text" id="side" name="side"></input><br><br>
+
+<script>
+function perimeterofrhombus() {
+  var sideofrhombuss = parseInt(document.getElementById("side").value)
+  var perimeter = parseInt(4*sideofrhombuss)
+  alert("Perimeter of Rhombus is " + perimeter + " cm.")  
+}
+</script>
+<button onclick=perimeterofrhombus()>Submit</button>
+</form>
+</body>
+</html>

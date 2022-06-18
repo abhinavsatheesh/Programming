@@ -1,0 +1,10 @@
+Display.ShowMessageDialog.ShowMessageWithTimeout Title: $'''PDF Merger''' Message: $'''Welcome to PDF Merger. Select more than one PDF and merge them to form a single PDF. Save it in a folder of your choice.''' Icon: Display.Icon.Information Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False Timeout: 10 ButtonPressed=> ButtonPressed
+IF ButtonPressed = $'''OK''' THEN
+    Display.SelectFileDialog.SelectFiles Title: $'''Select PDF Files''' IsTopMost: False CheckIfFileExists: True SelectedFiles=> SelectedFiles ButtonPressed=> ButtonPressed2
+    Display.SelectFolder Description: $'''Select the Folder you wish to save the merged PDF''' IsTopMost: False SelectedFolder=> SelectedFolder ButtonPressed=> ButtonPressed3
+    Pdf.MergeFiles PDFFiles: SelectedFiles MergedPDFPath: $'''%SelectedFolder%\\MergedPDF.pdf''' IfFileExists: Pdf.IfFileExists.AddSequentialSuffix PasswordDelimiter: $''',''' MergedPDF=> MergedPDF
+    Display.ShowMessageDialog.ShowMessage Title: $'''Start PDF File''' Message: $'''The merged PDF has been saved successfully. Open it?''' Icon: Display.Icon.Question Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed4
+    IF ButtonPressed4 = $'''OK''' THEN
+        System.RunApplication.RunApplication ApplicationPath: MergedPDF WindowStyle: System.ProcessWindowStyle.Normal ProcessId=> AppProcessId
+    END
+END

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>JavaScript Functions</title>
+</head>
+<body>
+<form>
+  <label for="name">May I know your name?</label>
+  <input type="text" id="name" name="name"></input><br><br>
+  <label for="job">May I know your job?</label>
+  <input type="text" id="job" name="job"></input><br>
+</form>
+<script>
+function processall() {
+  var nameper = document.getElementById("name").value
+  var jobper = document.getElementById("job").value
+  function completereturn(nameper, jobper) {
+    alert("Hello, " + nameper + " . Your job is " + jobper)
+  }
+  completereturn(nameper, jobper)
+ }
+</script>
+<button onclick=processall()>Submit</button>
+</body>
+</html>

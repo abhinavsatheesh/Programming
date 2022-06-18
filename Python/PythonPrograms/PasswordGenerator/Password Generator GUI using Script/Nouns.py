@@ -1,0 +1,1 @@
+nouns = ['apple', 'dinosaur', 'ball','toaster', 'goat', 'dragon','hammer', 'duck', 'panda', 'more', 'some ', 'telephone', 'banana', 'teacher']

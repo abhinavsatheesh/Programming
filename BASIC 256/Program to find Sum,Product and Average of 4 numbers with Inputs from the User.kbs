@@ -1,0 +1,15 @@
+Rem to find the sum, products and average of 4 numebers with input from the user
+Print "Program to find the sum, products and average of 4 numebers with input from the user"
+Input "Enter 4 numbers", A
+Input B
+Input C
+Input D
+Sum=A+B+C+D
+Product=A*B*C*D
+Average=Sum/4
+Print "The sum of the 4 numbers = ";
+Print Sum
+Print "The products of the 4 numbers = ";
+Print Product
+Print "The average of the 4 numbers = ";
+Print Average

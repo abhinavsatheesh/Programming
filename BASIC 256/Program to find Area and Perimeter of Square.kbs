@@ -1,0 +1,10 @@
+Rem to find area and perimeter of square
+Print "Program to find area and perimeter of a square"
+s=25
+A=s*s
+P=4*s
+Print "Area=";
+Print A
+Print "Perimeter=";
+Print P
+

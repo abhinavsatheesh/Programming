@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Area Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Area Converter</h1>
+            <label for="squarefeet">Square Feet</label>
+            <input type="text" id="squarefeet" name="squarefeet" placeholder="0" oninput="squarefeetChanged()"></input>
+            <br><br>
+            <label for="acres">Acres</label>
+            <input type="text" id="acres" name="acres" placeholder="0" oninput="acresChanged()"></input>
+            <br><br>
+            <label for="hectares">Hectares</label>
+            <input type="text" id="hectares" name="hectares" placeholder="0" oninput="hectaresChanged()"></input>
+            <br><br>
+            <label for="squareyard">Square Yard</label>
+            <input type="text" id="squareyard" name="squareyard" placeholder="0" oninput="squareyardChanged()"></input>
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+            <br><br>
+        </center>
+    </body>
+    <script>
+    function squarefeetChanged() {
+        var squarefeet = document.getElementById("squarefeet").value;
+        var acres = squarefeet * 0.000206612;
+        var hectares = squarefeet * 0.0000229568;
+        var squareyard = squarefeet * 0.111111;
+        document.getElementById("acres").value = acres;
+        document.getElementById("hectares").value = hectares;
+        document.getElementById("squareyard").value = squareyard;
+    }
+    function acresChanged() {
+        var acres = document.getElementById("acres").value;
+        var squarefeet = acres * 43560;
+        var hectares = acres * 0.40468564224;
+        var squareyard = acres * 4840;
+        document.getElementById("squarefeet").value = squarefeet;
+        document.getElementById("hectares").value = hectares;
+        document.getElementById("squareyard").value = squareyard;
+    }
+    function hectaresChanged() {
+        var hectares = document.getElementById("hectares").value;
+        var squarefeet = hectares * 43560;
+        var acres = hectares * 4046.8564224;
+        var squareyard = hectares * 4840;
+        document.getElementById("squarefeet").value = squarefeet;
+        document.getElementById("acres").value = acres;
+        document.getElementById("squarefeet").value = squarefeet;
+        document.getElementById("squareyard").value = squareyard;
+    }
+    function squareyardChanged() {
+        var squareyard = document.getElementById("squareyard").value;
+        var squarefeet = squareyard * 9;
+        var acres = squareyard * 0.000206612;
+        var hectares = squareyard * 0.000206612;
+        document.getElementById("squarefeet").value = squarefeet;
+        document.getElementById("acres").value = acres;
+        document.getElementById("hectares").value = hectares;
+    }
+    function reset() {
+        document.getElementById("squarefeet").value = "";
+        document.getElementById("acres").value = "";
+        document.getElementById("hectares").value = "";
+        document.getElementById("squareyard").value = "";
+    }
+    </script>
+    </html>

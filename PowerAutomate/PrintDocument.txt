@@ -1,0 +1,7 @@
+Display.SelectFileDialog.SelectFiles Title: $'''Select a File to be printed''' IsTopMost: False CheckIfFileExists: True SelectedFiles=> SelectedFiles ButtonPressed=> ButtonPressed
+LOOP FOREACH CurrentItem IN SelectedFiles
+    Workstation.PrintDocument DocumentPath: CurrentItem
+    ON ERROR REPEAT 2 TIMES WAIT 2
+    END
+    Display.ShowMessageDialog.ShowMessage Title: $'''Print Job Completed''' Message: $'''%CurrentItem% has been printed successfully. ''' Icon: Display.Icon.Information Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+END

@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "38e75efb-db5c-4d39-8bb3-d049bd40a6b4": {
+      "ProjectGuid": "38e75efb-db5c-4d39-8bb3-d049bd40a6b4",
+      "DisplayName": "PasswordGenerator",
+      "ColorIndex": 0
+    },
+    "3fca1261-5121-476f-81b5-8a8d95093ec7": {
+      "ProjectGuid": "3fca1261-5121-476f-81b5-8a8d95093ec7",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

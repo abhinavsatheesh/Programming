@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>When to Retire</title>
+</head>
+<body>
+<form>
+  <label for="name">Enter your Name :</label>
+  <input type="text" id="name" name="Name"></input><br><br>
+  <label for="age">Enter your Age :</label>
+  <input type="text" id="age" name="age"></input><br><br>
+  <label for="profession">Enter your Profession :</label>
+  <input type="text" id="profession" name="profession"></input><br><br>
+  <label for="retirementage">Enter your Retiring Age :</label>
+  <input type="text" id="retirementage" name="retirementage"></input><br><br> 
+</form>
+<script>
+function processnameageprofessretirementage() {
+  var nameofperson = document.getElementById("name").value
+  var ageofperson = document.getElementById("age").value
+  var professionofperson = document.getElementById("profession").value
+  var retirement = document.getElementById("retirementage").value
+  var retirementageofperson = retirement-ageofperson
+  alert ("Hello " + nameofperson + ". Your age is " + ageofperson + ". You will have to retire from " +  professionofperson + ", " + retirementageofperson + " years from now.")
+}
+</script>
+<button onclick = processnameageprofessretirementage()>Submit</button>
+</body>
+</html>

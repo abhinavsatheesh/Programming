@@ -1,0 +1,30 @@
+<!-- Program to find Simple Interest !-->
+<html>
+<head>
+<title>Simple Interest</title>
+</head>
+<body>
+<form>
+  <label for="principal">Enter the Principal amount</label>
+  <input type="text" id="principal" name="principal"></input><br><br>
+  <label for="interestrate">Enter the Rate of Interest in Numbers</label>
+  <input type="text" id="interestrate" name="interestrate"></input>
+  <label for="percentage">%</label><br><br>
+  <label for="years">Enter the Time in Years</label>
+  <input type="text" id="years" name="timeperiod"></input><br>
+  
+</form>
+<script>
+function processsimpleinterest() {
+  var principalamount = parseFloat(document.getElementById("principal").value)
+  var interestrateper = parseFloat(document.getElementById("interestrate").value)
+  var timeperiod = parseInt(document.getElementById("years").value)
+  var si = (principalamount*interestrateper*timeperiod)/100
+  var amount = principalamount+si
+  alert("Simple Interest = ₹ " + si)
+  alert("Final Amount = ₹ " + amount)
+}
+</script>
+<button onclick=processsimpleinterest()>Submit</button>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Rem to find the perimeter and area of a rectangle with inputs from user
+Print "Program to find the perimeter and area of a rectangle with inputs from user"
+Input "Enter the length of the rectangle", L
+Input "Enter the breadth of the rectangle", Breadth 
+Area=L*Breadth
+Perimeter=2*(L+Breadth)
+Print "The area of the rectangle = ";
+Print Area
+Print "The perimter of the rectangle = ";
+Print Perimeter

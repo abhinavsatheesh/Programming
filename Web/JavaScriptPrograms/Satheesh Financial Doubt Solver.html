@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>Satheesh Financial Doubt Solver</title>
+</head>
+<style>
+h2 {
+  text-decoration: underline;
+}
+</style>
+<style>
+.rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 15px;
+}
+@media only screen and (min-width : 1250px){
+.table-scroll.sticky-actions {
+                     width: 25.5%;
+		position: fixed;
+		top: 117px !important;
+		-webkit-transition: all .3s ease-in-out;
+		-moz-transition: all .3s ease-in-out;
+		-ms-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		transition: all -0.2s ease-in-out;
+		z-index: 999;		
+	}
+
+    .table-scroll.sticky-actions-bottom {
+		position: relative;
+		-webkit-transition: all .3s ease-in-out;
+		-moz-transition: all .3s ease-in-out;
+		-ms-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		transition: all -0.2s ease-in-out;
+		z-index: 99;
+        right: 0% !important;
+	}
+	.animated {
+		-moz-animation-duration: .75s;
+		-ms-animation-duration: .75s;
+		-o-animation-duration: .75s;
+		-webkit-animation-duration: .75s;
+		animation-duration: .75s;
+	}
+	.animated {
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+
+}
+.txt-unique-small{
+margin-bottom:5px;
+}
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+{
+.table-scroll.sticky-actions{
+width: 28.5% !important ;
+}
+.rwd-table{
+width:85%;
+}
+.report-dropdown-table{
+width:60%;
+}
+}
+
+#gwd-ad{
+cursor: pointer;
+}
+</style>
+<body>
+<center>
+  <h2>Welcome to the Satheesh Financial Doubt Solver</h2>
+  <p>Hi. Welcome To The Satheesh Financial Doubt Solver. What do you need help with today? There are 3 options, GST, Income Tax and Economics and B COM</p>
+</center>
+<form>
+  <h3>Select your doubt in Finance using the dropdown below</h3>
+  <select name="doubts" id="getdata">
+    <option value="selectoption">Select an Option</option>
+    <option value="Accountancy">Accountancy</option>
+    <option value="GST">GST</option>
+  </select><br><br>
+  <button onclick=process()>Get Help</button>
+
+</form>
+<script>
+
+
+function process() {
+  choice_selected = document.getElementById("getdata").value
+  if (choice_selected === "Income Tax and Economics") {
+    alert("This is in Development Mode")
+  }
+  else if (choice_selected === "Accountancy") {
+    var accountant = "Accountancy \n There are 3 basic rules of Accountancy, that is: \n 1. Debit the Reciever, Credit the Giver \n 2. Debit what Comes in, Credit what Goes Out \n 3. Debit all expenses and losses, credit all credits and incomes. \n Understand? It is as simple as that. Apply these 3 rules, and you will get your requirements solved. \n Thank You!"
+	alert(accountant)
+  }
+  else if (choice_selected === "GST") {
+    alert("This is in Development Mode")
+  }
+  else {
+    alert("Please select a valid option")
+  }
+}
+</script>
+<h3>General Facts</h3>
+<h3>Income Tax Slab Details</h3>
+<div class="loyalty-table">
+<table class="rwd-table">
+<thead><tr><th>Income Tax Slab</th>
+<th>Tax rates as per new regime</th>
+<th>Tax rates as per old regime</th>
+</tr></thead><tbody><tr><td>₹0 - ₹2,50,000</td>
+<td>Nil</td>
+<td>Nil</td>
+</tr><tr><td>₹2,50,001 - ₹ 5,00,000</td>
+<td>5%</td>
+<td>5%</td>
+</tr><tr><td>₹5,00,001 - ₹ 7,50,000</td>
+<td>₹12500 + 10% of total income exceeding ₹5,00,000</td>
+<td>₹12500 + 20% of total income exceeding ₹5,00,000</td>
+</tr><tr><td>₹7,50,001 - ₹ 10,00,000</td>
+<td>₹37500 + 15% of total income exceeding ₹7,50,000</td>
+<td>₹62500 + 20% of total income exceeding ₹7,50,000</td>
+</tr><tr><td>₹10,00,001 - ₹12,50,000</td>
+<td>₹75000 + 20% of total income exceeding ₹10,00,000</td>
+<td>₹112500 + 30% of total income exceeding ₹10,00,000</td>
+</tr><tr><td>₹12,50,001 - ₹15,00,000</td>
+<td>₹125000 + 25% of total income exceeding ₹12,50,000</td>
+<td>₹187500 + 30% of total income exceeding ₹12,50,000</td>
+</tr><tr><td>Above ₹ 15,00,000</td>
+<td>₹187500 + 30% of total income exceeding ₹15,00,000</td>
+<td>₹262500 + 30% of total income exceeding ₹15,00,000</td>
+</tr></tbody></table>
+</div>
+</body>
+</html>

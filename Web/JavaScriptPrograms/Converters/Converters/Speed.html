@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Speed Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #4D6FCF;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #6e93fa}
+
+        .button:active {
+            background-color: #132d66;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <body>
+        <center>
+            <h1>Speed Converter</h1>
+            <label for="metrePersecond">Metres Per Second (m/s)</label>
+            <input for="metrePersecond" id="metrePersecond" placeholder="0" oninput="metrePersecondChanged()"></input>
+            <br><br>
+            <label for="kilometrePerhour">Kilometres Per Hour (km/h)</label>
+            <input for="kilometrePerhour" id="kilometrePerhour" placeholder="0" oninput="kilometrePerhourChanged()"></input>
+            <br><br>
+            <label for="milePerhour">Miles Per Hour (mph)</label>
+            <input for="milePerhour" id="milePerhour" placeholder="0" oninput="milePerhourChanged()"></input>
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function metrePersecondChanged() {
+            var metrePersecond = document.getElementById("metrePersecond").value;
+            var kilometrePerhour = metrePersecond*3.6;
+            var milePerhour = metrePersecond*2.237
+            document.getElementById("kilometrePerhour").value = kilometrePerhour;
+            document.getElementById("milePerhour").value = milePerhour;
+        }
+        function kilometrePerhourChanged() {
+            var kilometrePerhour = document.getElementById("kilometrePerhour").value;
+            var metrePersecond = kilometrePerhour/3.6;
+            var milePerhour = kilometrePerhour/1.609
+            document.getElementById("metrePersecond").value = metrePersecond;
+            document.getElementById("milePerhour").value = milePerhour;
+        }
+        function milePerhourChanged() {
+            var milePerhour = document.getElementById("milePerhour").value;
+            var metrePersecond = milePerhour/2.237;
+            var kilometrePerhour = milePerhour/1.609
+            document.getElementById("metrePersecond").value = metrePersecond;
+            document.getElementById("kilometrePerhour").value = kilometrePerhour;
+        }
+        function reset() {
+            document.getElementById("metrePersecond").value = 0;
+            document.getElementById("kilometrePerhour").value = 0;
+            document.getElementById("milePerhour").value = 0;
+        }
+    </script>
+    </html>

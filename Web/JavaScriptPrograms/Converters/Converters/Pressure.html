@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Pressure Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #4D6FCF;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #6e93fa}
+
+        .button:active {
+            background-color: #132d66;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <body>
+        <center>
+            <h1>Pressure Converter</h1>
+            <label for="pascal">Pascals</label>
+            <input name="pascal" id="pascal" placeholder="0" oninput="pascalChanged()"></input>
+            <br><br>
+            <label for="bar">Bars</label>
+            <input name="bar" id="bar" placeholder="0" oninput="barChanged()"></input>
+            <br><br>
+            <label for="atm">Atmospheres</label>
+            <input name="atm" id="atm" placeholder="0" oninput="atmChanged()"></input>
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function pascalChanged() {
+            var pascal = document.getElementById("pascal").value;
+            var bar = pascal * 0.00001;
+            var atm = pascal * 0.00000986923;
+            document.getElementById("bar").value = bar;
+            document.getElementById("atm").value = atm;
+        }
+        function barChanged() {
+            var bar = document.getElementById("bar").value;
+            var pascal = bar * 100000;
+            var atm = bar * 0.986923;
+            document.getElementById("pascal").value = pascal;
+            document.getElementById("atm").value = atm;
+        }
+        function atmChanged() {
+            var atm = document.getElementById("atm").value;
+            var pascal = atm * 101325;
+            var bar = atm * 1.01325;
+            document.getElementById("pascal").value = pascal;
+            document.getElementById("bar").value = bar;
+        }
+        function reset() {
+            document.getElementById("pascal").value = ""
+            document.getElementById("bar").value = ""
+            document.getElementById("atm").value = ""
+        }
+    </script>

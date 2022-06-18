@@ -1,0 +1,10 @@
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\bin\Debug\netstandard2.0\SatheeshFinancialCenter.Core.deps.json
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\bin\Debug\netstandard2.0\SatheeshFinancialCenter.Core.dll
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\bin\Debug\netstandard2.0\SatheeshFinancialCenter.Core.pdb
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.csproj.AssemblyReference.cache
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.AssemblyInfoInputs.cache
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.AssemblyInfo.cs
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.csproj.CoreCompileInputs.cache
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.dll
+D:\SatheeshFinancialCenter\SatheeshFinancialCenter.Core\obj\Debug\netstandard2.0\SatheeshFinancialCenter.Core.pdb

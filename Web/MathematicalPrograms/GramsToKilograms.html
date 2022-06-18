@@ -1,0 +1,20 @@
+<!-- Convert grams to kilograms<!-->
+<html>
+<head>
+<title>Grams to Kilograms</title>
+</head>
+<body>
+<form>
+  <label for="grams">Enter the Measurement in Grams</label>
+  <input type="text" id="grams" name="grams"></input><br>
+</form>
+<script>
+function processgramskg() {
+  var gramsmeasure = parseFloat(document.getElementById("grams").value)
+  var kilogramsmeasure = parseFloat(gramsmeasure/1000)
+  alert("Weight in kilograms = " + kilogramsmeasure + " kg")
+}
+</script>
+<button onclick=processgramskg()>Submit</button>
+</body>
+</html>

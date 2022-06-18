@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Mass & Weight Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Mass & Weight Converter</h1>
+            <label for="grams">Grams</label>
+            <input name="grams" id="grams" type="text" placeholder="0" oninput="gramsChanged()"></input>
+            <br><br>
+            <label for="kilograms">Kilograms</label>
+            <input name="kilograms" id="kilograms" type="text" placeholder="0" oninput="kilogramsChanged()"></input>
+            <br><br>
+            <label for="tonne">Tonnes</label>
+            <input name="tonne" id="tonne" type="text" placeholder="0" oninput="tonneChanged()"></input>
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function gramsChanged() {
+            var grams = document.getElementById("grams").value;
+            var kilograms = grams/1000;
+            var tonnes = grams/1000000;
+            document.getElementById("kilograms").value = kilograms;
+            document.getElementById("tonne").value = tonnes;
+        }
+        function kilogramsChanged() {
+            var kilograms = document.getElementById("kilograms").value;
+            var grams = kilograms*1000;
+            var tonnes = kilograms/1000;
+            document.getElementById("grams").value = grams;
+            document.getElementById("tonne").value = tonnes;
+        }
+        function tonneChanged() {
+            var tonnes = document.getElementById("tonne").value;
+            var kilograms = tonnes*1000;
+            var grams = tonnes*1000000;
+            document.getElementById("grams").value = grams;
+            document.getElementById("kilograms").value = kilograms;
+        }
+        function reset() {
+            document.getElementById("grams").value = ""
+            document.getElementById("kilograms").value = ""
+            document.getElementById("tonne").value = ""
+        }
+    </script>
+</html>

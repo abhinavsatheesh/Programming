@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Finding the Cost of an Item</title>
+</head>
+<body>
+<form>
+  <label for="itemname">Enter the name of the Item</label>
+  <input type="text" id="itemname" name="itemname"></input><br><br>
+  <label for="quantity">'Enter the quantity of the Item. Enter in Kilograms</label>
+  <input type="text" id="quantity" name="quantity"></input><br><br>
+  <label for="price">Enter the base price of the Item</label>
+  <input type="text" id="price" name="price"></input><br>
+</form>
+<script>
+function processprice() {
+  var itemnameper = document.getElementById("itemname").value
+  var quantityper = parseFloat(document.getElementById("quantity").value)
+  var priceper = parseFloat(document.getElementById("price").value)
+  var totalprice = parseFloat(quantityper*priceper)
+  alert("Total Price for the item " + itemnameper + " is Rs." + totalprice)
+}
+</script> 
+<button onclick=processprice()>Submit</button>
+</body>
+</html>

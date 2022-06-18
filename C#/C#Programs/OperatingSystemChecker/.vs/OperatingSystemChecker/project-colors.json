@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e4ca61e3-84d4-4adc-b2a6-79f29d8ae03a": {
+      "ProjectGuid": "e4ca61e3-84d4-4adc-b2a6-79f29d8ae03a",
+      "DisplayName": "OperatingSystemChecker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

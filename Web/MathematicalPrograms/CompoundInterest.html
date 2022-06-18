@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Compound Interest</title>
+</head>
+<body>
+<form>
+    <label for="principal">Enter the Principal amount</label>
+    <input type="text" id="principal" name="principal"></input><br><br>
+    <label for="interestrate">Enter the Rate of Interest in Numbers</label>
+    <input type="text" id="interestrate" name="interestrate"></input>
+    <label for="percentage">%</label><br><br>
+    <label for="years">Enter the Time in Years</label>
+    <input type="text" id="years" name="timeperiod"></input><br>
+    
+</form>
+<script>
+    function calccompound() {
+    var principalamount = parseFloat(document.getElementById("principal").value)
+    var interestrateper = parseFloat(document.getElementById("interestrate").value)
+    var timeperiod = parseInt(document.getElementById("years").value)
+    var rate100 = 1+(interestrateper/100)
+    var rateraised = Math.pow(rate100, timeperiod)
+    var amount = rateraised*principalamount
+    var ci = amount-principalamount
+    alert("Final amount is ₹ " + amount)
+    alert("Compound Interest is ₹" + ci)
+    }
+</script>
+<button onclick=calccompound()>Submit</button>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>JavaScript Strings</title>
+</head>
+<body>
+<form>
+  <label for="name">Enter your name</label>
+  <input type="text" id="name" name="name"></input><br><br>
+  <label for="place">Enter the place where you were born</label>
+  <input type="text" id="place" name="place"></input><br><br>
+  <label for="date">Enter the date when you were born</label>
+  <input type="text" id="date" name="date"></input><br><br>
+</form>
+<script>
+function processall() {
+  var nameper = document.getElementById("name").value
+  var placeper = document.getElementById("place").value
+  var dateper = document.getElementById("date").value
+  alert("Hello, " + nameper + ". You were born in " + placeper + " on " + dateper)
+}
+</script>
+<button onclick=processall()>Submit</button>
+</body>
+</html>

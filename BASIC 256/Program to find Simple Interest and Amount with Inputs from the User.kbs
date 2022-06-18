@@ -1,0 +1,11 @@
+Rem to find the Amount and Simple Interest with inputs from the user
+Print "Program to find the Amount and Simple Interest with inputs from the user"
+Input "Enter the principal amount borrowed", Principal
+Input "Enter the rate of interest for repaying the Principal amount", RateOfInterest
+Input "Enter the no. of years for repaying the Principal amount", Time
+SimpleInterest=Principal*Time*RateOfInterest
+Amount=Principal+SimpleInterest
+Print "The Simple Interest = ";
+Print SimpleInterest
+Print "The total amount to be paid at the end = ";
+Print Amount

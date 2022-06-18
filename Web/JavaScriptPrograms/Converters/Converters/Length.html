@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Length Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Length Converter</h1>
+            <label for="centimetre">Centimetre</label>
+            <input name="centimetre" id="centimetre" type="text" placeholder="0" oninput="centimetreChanged()">
+            <br><br>
+            <label for="metre">Metre</label>
+            <input name="metre" id="metre" type="text" placeholder="0" oninput="metreChanged()">
+            <br><br>
+            <label for="kilometre">Kilometre</label>
+            <input name="kilometre" id="kilometre" type="text" placeholder="0" oninput="kilometreChanged()">
+            <br><br>
+            <label for="feet">Feet</label>
+            <input name="feet" id="feet" type="text" placeholder="0" oninput="feetChanged()">
+            <br><br>
+            <label for="yard">Yards</label>
+            <input name="yard" id="yard" type="text" placeholder="0" oninput="feetChanged()">
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function centimetreChanged() {
+            var centimetre = document.getElementById("centimetre").value;
+            var metre = centimetre / 100;
+            var kilometre = centimetre / 100000;
+            var feet = centimetre * 0.0328084;
+            var yard = centimetre * 0.0109361;
+            document.getElementById("metre").value = metre;
+            document.getElementById("kilometre").value = kilometre;
+            document.getElementById("feet").value = feet;
+            document.getElementById("yard").value = yard;
+        }
+        function metreChanged() {
+            var metre = document.getElementById("metre").value;
+            var centimetre = metre * 100;
+            var kilometre = metre / 1000;
+            var feet = metre * 3.28084;
+            var yard = metre * 1.09361;
+            document.getElementById("centimetre").value = centimetre;
+            document.getElementById("kilometre").value = kilometre; 
+            document.getElementById("feet").value = feet;
+            document.getElementById("yard").value = yard;
+        }
+        function kilometreChanged() {
+            var kilometre = document.getElementById("kilometre").value;
+            var centimetre = kilometre * 100000;
+            var metre = kilometre * 1000;
+            var feet = kilometre * 3280.84;
+            var yard = kilometre * 1093.61;
+            document.getElementById("centimetre").value = centimetre;
+            document.getElementById("metre").value = metre;
+            document.getElementById("feet").value = feet;
+            document.getElementById("yard").value = yard;
+        }
+        function feetChanged() {
+            var feet = document.getElementById("feet").value;
+            var centimetre = feet / 0.0328084;
+            var metre = feet / 3.28084;
+            var kilometre = feet / 3280.84;
+            var yard = feet / 3;
+            document.getElementById("centimetre").value = centimetre;
+            document.getElementById("metre").value = metre;
+            document.getElementById("kilometre").value = kilometre;
+            document.getElementById("yard").value = yard;
+        }
+        function yardChanged() {
+            var yard = document.getElementById("yard").value;
+            var centimetre = yard / 0.0109361;
+            var metre = yard / 1.09361;
+            var kilometre = yard / 1093.61;
+            var feet = yard / 0.333333;
+            document.getElementById("centimetre").value = centimetre;
+            document.getElementById("metre").value = metre;
+            document.getElementById("kilometre").value = kilometre;
+            document.getElementById("feet").value = feet;
+        }
+        function reset() {
+            document.getElementById("centimetre").value = 0;
+            document.getElementById("metre").value = 0;
+            document.getElementById("kilometre").value = 0;
+            document.getElementById("feet").value = 0;
+            document.getElementById("yard").value = 0;
+        }
+    </script>
+</html>

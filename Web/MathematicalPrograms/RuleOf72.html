@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Rule of 72</title>
+</head>
+<body>
+<form>
+    <label for="principal">Enter the Principal amount</label>
+    <input type="text" id="principal" name="principal"></input><br><br>
+    <label for="interestrate">Enter the Rate of Interest in Numbers</label>
+    <input type="text" id="interestrate" name="interestrate"></input>
+</form>
+<script>
+    function calc72() {
+        var principalamount = parseFloat(document.getElementById("principal").value)
+        var interestrateper = parseFloat(document.getElementById("interestrate").value)
+        var inyears = 72/interestrateper
+        alert("Your Principal amount ₹ " + principalamount + " will become ₹ " + 2*principalamount + " in " + inyears + " years")
+    } 
+</script>
+<button onclick=calc72()>Submit</button>
+</body>
+</html>

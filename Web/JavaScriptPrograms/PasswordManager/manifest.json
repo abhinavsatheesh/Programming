@@ -1,0 +1,55 @@
+{
+"screenshots": [
+  {
+    "src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
+    "sizes": "2880x1800",
+    "type": "image/png",
+    "description": "PWABuilder Home Screen"
+  },
+  {
+    "src": "https://www.pwabuilder.com/assets/screenshots/screen2.png",
+    "sizes": "2880/1800",
+    "type": "image/png",
+    "description": "PWABuilder Report Card"
+  },
+  {
+    "src": "https://www.pwabuilder.com/assets/screenshots/screen3.png",
+    "sizes": "2880x1800",
+    "type": "image/png",
+    "description": "Manifest information on the Report Card"
+  }
+], 
+"background_color": "#F69459", 
+
+    "description": "Password Manager - Manage or Generate your Passwords with Ease",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Password Manager",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "Password Manager",
+    "start_url": "/index.html",
+    "theme_color": "#f69459",
+    "categories": ["Security", "Password Management", "Password Generator"],
+    "icons": [
+      {
+        "src": "Assets/icon_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "shortcuts": [
+  {
+    "name": "Generate a Password",
+    "short_name": "Generate a Password",
+    "description": "Quickly generate a Password",
+    "url": "/Pages/PasswordGenerator.html",
+    "icons": [
+      {
+        "src": "https://pwabuilder.com/assets/icons/icon_192.png",
+        "sizes": "192x192"
+      }
+    ]
+  }
+]
+  }

@@ -28,7 +28,7 @@
     "orientation": "any",
     "scope": "/",
     "short_name": "Password Manager",
-    "start_url": "https://abhinavsatheesh.github.io/Programming/JavaScriptPrograms/PasswordManager/index.html",
+    
     "theme_color": "#f69459",
     "categories": ["Security", "Password Management", "Password Generator"],
     "icons": [

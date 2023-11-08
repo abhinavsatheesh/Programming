@@ -19,7 +19,7 @@
         "dir": "ltr",
         "display": "standalone",
         "name": "Converters",
-        "start_url": "/Converters/", 
+        "start_url": "/Programming/Web/JavaScriptPrograms/Converters/", 
         "orientation": "any",
         "scope": ".",
         "short_name": "Converters",

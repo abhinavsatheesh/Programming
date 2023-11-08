@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Area and Perimeter of Trapezium</title>
+</head>
+<body>
+
+<h1>Perimeter of Trapezium</h1>
+<form>
+  <label for="side1">Enter the length of 1st Side</label>
+  <input type="text" id="side1" name="side1"></input><br><br>
+  <label for="side2">Enter the length of 2nd Side</label>
+  <input type="text" id="side2" name="side2"></input><br><br>
+  <label for="side3">Enter the length of 3rd side</label>
+  <input type="text" id="side3" name="side3"></input><br><br>
+  <label for="side4">Enter the length of 4th Side</label>
+  <input type="text" id="side4" name="side4"></input><br><br>
+
+<script>
+function perimeteroftrapezium() {
+  var side1oftrapezium = parseInt(document.getElementById("side1").value)
+  var side2oftrapezium = parseInt(document.getElementById("side2").value)
+  var side3oftrapezium = parseInt(document.getElementById("side3").value)
+  var side4oftrapezium = parseInt(document.getElementById("side4").value)
+  var perimeter = parseInt(side1oftrapezium+side2oftrapezium+side3oftrapezium+side4oftrapezium)
+  alert ("Perimeter of the Trapezium is " + perimeter + " cm.")
+}
+</script>
+<button onclick=perimeteroftrapezium()>Submit</button> 
+</form>  
+
+<h1>Area of Trapezium</h1>
+<form>
+  <label for="base1">Enter the length of Base 1</label>
+  <input type="text" id="base1" name="base1"></input><br><br>
+  <label for="base2">Enter the Length of Base 2</label>
+  <input type="text" id="base2" name="base2"></input><br><br>
+  <label for="height">Enter the height of Trapezium</label>
+  <input type="text" id="height" name="height"></input><br><br>
+  
+<script>
+function area() {
+  var base1oftrapezium = parseInt(document.getElementById("base1").value)
+  var base2oftrapezium = parseInt(document.getElementById("base2").value)
+  var heightoftrapezium = parseInt(document.getElementById("height").value)
+  var area = parseInt(((base1oftrapezium+base2oftrapezium)/2)*heightoftrapezium)
+  alert ("Area of the Trapezium is " + area + " sq.cm.")
+}
+</script>
+<button onclick=area()>Submit</button>
+</form>
+</body>
+</html>

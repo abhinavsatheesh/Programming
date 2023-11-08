@@ -1,0 +1,40 @@
+<!-- Program to find out the total marks recieved in a subject and its Percentage !-->
+<html>
+<head>
+<title>Marks Calculator</title>
+</head>
+<body>
+<form>
+  <label for="sciencelabel">Enter the marks recieved in Science</label>
+  <input type="text" id="scienceinput" name="scienceinput"></input><br><br>
+  <label for="sociallabel">Enter the marks recieved in Social</label>
+  <input type="text" id="social" name="socialmarks"></input><br><br>
+  <label for="mathslabel">Enter the marks recieved in Maths</label>
+  <input type="text" id="maths" name="mathsmarks"></input><br><br>
+  <label for="englishlabel">Enter the marks recieved in English</label>
+  <input type="text" id="english" name="englishmarks"></input><br><br>
+  <label for="hindilabel">Enter the marks recieved in Hindi</label>
+  <input type="text" id="hindi" name="hindimarks"></input><br><br>
+  <label for="sanskritlabel">Enter the marks recieved in Sanskrit</label>
+  <input type="text" id="sanskrit" name="sanskritmarks"></input><br><br>
+  <label for="totallabel">Enter the total marks for an exam</label>
+  <input type="text" id="total" name="totalmarks"></input><br><br>
+  <button onclick=processmarks()>Submit</button>
+</form>
+<script>
+function processmarks() {
+  var SCIENCE = parseInt(document.getElementById("scienceinput").value)
+  var SOCIAL = parseInt(document.getElementById("social").value)
+  var MATHS = parseInt(document.getElementById("maths").value)
+  var ENGLISH = parseInt(document.getElementById("english").value)
+  var HINDI = parseInt(document.getElementById("hindi").value)
+  var SANSKRIT = parseInt(document.getElementById("sanskrit").value)
+  var TOTAL = parseInt(document.getElementById("total").value)
+  var TOTALMARKS = SCIENCE + SOCIAL + MATHS + ENGLISH + HINDI + SANSKRIT
+  var PERCENTAGE = (TOTALMARKS/TOTAL)*100
+  alert("Your total marks in the Exams is " + TOTALMARKS)
+  alert("Your mark percentage in exams is " + PERCENTAGE + " %")
+}
+</script>
+</body>
+</html>	

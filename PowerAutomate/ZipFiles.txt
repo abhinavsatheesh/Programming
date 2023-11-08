@@ -1,0 +1,4 @@
+Display.InputDialog Title: $'''Name of Zip File''' Message: $'''Enter the name of the Zip File''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed4
+Display.SelectFileDialog.SelectFiles Title: $'''Select more than 1 file''' IsTopMost: False CheckIfFileExists: True SelectedFiles=> SelectedFiles ButtonPressed=> ButtonPressed2
+Display.SelectFolder Description: $'''Select the Folder where you wish to save the Zip File''' IsTopMost: False SelectedFolder=> SelectedFolder ButtonPressed=> ButtonPressed3
+Compression.ZipFiles ArchivePath: $'''%SelectedFolder%\\%UserInput%.zip''' FilesOrFoldersToZip: SelectedFiles CompressionLevel: Compression.CompressionLevel.BestBalanceOfSpeedAndCompression ArchiveComment: $'''''' ZipFile=> ZipFile

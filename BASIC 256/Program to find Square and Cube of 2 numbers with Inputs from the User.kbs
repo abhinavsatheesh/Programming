@@ -1,0 +1,12 @@
+Rem to find the square and cube of two no. with inputs from the user
+Print "Program to find the square and cube of two no. with inputs from the user"
+Input "Enter a number", A
+Input "Enter another number", B
+Print "The square of the number A = ";
+Print A*A
+Print "The cube of the number A = ";
+Print A*A*A
+Print "The square of the number B = ";
+Print B*B
+Print "The cube of the number B = ";
+Print B*B*B

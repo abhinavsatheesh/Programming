@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>What is your Name and Age</title>
+</head>
+<body>
+<form>
+  <label for="name">Enter your name</label>
+  <input type="text" id="name" name="name"></input><br><br>
+  <label for="age">Enter your age</label>
+  <input type="text" id="age" name="age"></input><br><br>
+</form>
+<button onclick="processnameage()">Submit</button>
+<script>
+function processnameage() {
+  var nameofperson = document.getElementById("name").value;
+  var ageofperson = document.getElementById("age").value;
+  alert("Hello " + nameofperson + ". Your age is " + ageofperson);
+}
+</script>
+</body>
+</html>

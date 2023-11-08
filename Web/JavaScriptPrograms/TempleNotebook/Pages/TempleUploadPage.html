@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temple Notebook: Submit a Temple Note</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <center>
+            <h1>Temple Notebook: Submit a Temple Note</h1>
+            <form>
+                <input type="text" name="TempleName" id="TempleName" size="25" placeholder="Enter the Name of the Temple" required>
+                <br/><br/>
+                <textarea name="TempleDetails" id="TempleDetails" rows="15" cols="25" placeholder="Enter the Details of the Temple" required></textarea>
+                <br/><br/>
+                <input type="file" name="TempleImages" id="TempleImages" max="4" multiple>
+                <br/><br/>
+                <input type="submit" class="button" onclick="SubmitTemple()" value="Submit Temple Note">
+            </form>
+            
+        </center>
+        <script>
+            function SubmitTemple()
+            {
+                event.preventDefault();
+                let images = [];
+                var templeName = document.getElementById("TempleName").value;
+                var templeDetails = document.getElementById("TempleDetails").value;
+				if (templeName == "")
+				{
+					alert("Please enter the Temple Name")
+				}
+				if (templeDetails == "")
+				{
+					alert("Please enter the Temple Details")
+				}
+				else
+				{
+				var noOfFiles = document.getElementById("TempleImages").files;
+                if (noOfFiles.length >5)
+                {
+                    alert("You have selected more than 5 images. Please select atmost 5 images")
+                    document.getElementById("TempleImages").value = ""
+                }
+                else if (noOfFiles.length == 0)
+                {
+                    var obj = new Object()
+                    obj.TempleName = templeName
+                    obj.templeDetails = templeDetails
+                    var jsonString = JSON.stringify(obj)
+                    console.log(jsonString)
+                    var url = "https://temple-notebook-1640359038869-default-rtdb.firebaseio.com/"+templeName+".json"
+                    fetch(url, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: jsonString
+                    }).then(function(response) {
+                                if (response.status == 200)
+                                {
+                                    alert("Temple Note added successfully")
+                                }
+                            })
+                }
+                else
+                {   
+                    let i = 0
+                    for(i = 0; i < noOfFiles.length; i++)
+                    {
+                        var file = noOfFiles[i]
+                        const FormInstance = new FormData()
+                        FormInstance.append("image", file)                
+                        fetch("https://api.imgur.com/3/image/", {
+                            method: "POST",
+                            headers: {
+                                Authorization: "Client-ID 0dc6b4fbc159a6a"
+                            },
+                            body: FormInstance
+                        }).then(data => data.json()).then(data => {                           
+                            var link = data.data.link
+                            images.push(link)
+                            if (images.length == noOfFiles.length)
+                            {
+                                var obj = new Object()
+                                obj.TempleName = templeName
+                                obj.templeDetails = templeDetails
+                                obj.AddedImages = images
+                                var jsonString = JSON.stringify(obj)
+                                console.log(jsonString)
+                                var url = "https://temple-notebook-1640359038869-default-rtdb.firebaseio.com/"+templeName+".json"
+                                fetch(url, {
+                                    method: 'PATCH',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: jsonString
+                            }).then(function(response) {
+                                if (response.status == 200)
+                                {
+                                    alert("Temple Note added successfully")
+                                }
+                            })
+                            }
+                        })
+                    }
+                }
+			}   
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Temple Notebook: Upload an Image</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <center>
+            <h1>Temple Notebook: Upload an Image</h1>
+            <form>
+                <h2>Select an Image(s)</h2>
+                <br>
+                <input type="file" name="SelectedImage" id="SelectedImage" multiple>
+                <br><br>
+                <input class="button" type="submit" onclick="UploadImages()" value="Upload Images">
+                <br><br>
+                
+            </form>
+            <div id="links">
+
+            </div>
+            <script>
+                function UploadImages()
+                {
+                    event.preventDefault();
+                    let images = [];
+                    var noOfFiles = document.getElementById("SelectedImage").files;
+                    if (noOfFiles.length == 0)
+                    {
+                        alert("Please select an Image")
+                    }
+                    else
+                    {
+                        let i = 0
+                        for(i = 0; i<noOfFiles.length; i++)
+                        {
+                            var file = noOfFiles[i]
+                            const FormInstance = new FormData()
+                            FormInstance.append("image", file)
+                            fetch("https://api.imgur.com/3/image/", {
+                            method: "POST",
+                            headers: {
+                                Authorization: "Client-ID 0dc6b4fbc159a6a"
+                            },
+                            body: FormInstance
+                        }).then(data => data.json()).then(data => { 
+                            var link = data.data.link
+                            const node = document.createTextNode(link + "\n");
+                            const duv = document.createElement("div");
+                            duv.appendChild(node)
+                            document.getElementById("links").appendChild(duv)
+                        })   
+                        }
+                    }
+                }
+            </script>
+        </center>
+    </body>
+</html>

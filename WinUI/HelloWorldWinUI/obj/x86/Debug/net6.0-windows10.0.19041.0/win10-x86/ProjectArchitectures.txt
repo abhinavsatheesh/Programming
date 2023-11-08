@@ -1,0 +1,1 @@
+C:\Users\Dell\source\repos\HelloWorldWinUI\HelloWorldWinUI\HelloWorldWinUI.csproj;x86

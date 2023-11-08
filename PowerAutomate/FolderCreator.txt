@@ -1,0 +1,4 @@
+Display.InputDialog Title: $'''Enter a folder name''' Message: $'''Enter the name of the Folder you wish to create''' InputType: Display.InputType.SingleLine IsTopMost: True UserInput=> UserInput ButtonPressed=> ButtonPressed2
+Display.SelectFolder Description: $'''Select a parent directory to create %UserInput%''' IsTopMost: True SelectedFolder=> SelectedFolder ButtonPressed=> ButtonPressed
+Folder.Create FolderPath: SelectedFolder FolderName: UserInput Folder=> NewFolder
+Display.ShowMessageWithTimeout Title: $'''Folder created''' Message: $'''Folder created successfully in the path %NewFolder%''' Icon: Display.Icon.Information Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False Timeout: 5 ButtonPressed=> ButtonPressed3

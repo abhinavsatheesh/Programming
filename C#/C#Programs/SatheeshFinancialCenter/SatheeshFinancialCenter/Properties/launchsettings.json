@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "SatheeshFinancialCenter (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "SatheeshFinancialCenter (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

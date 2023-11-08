@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Area and Perimeter of Circle</title>
+</head>
+<body>
+<form>
+  <label for="radius">Enter the Radius</label>
+  <input type="text" id="radius" name="radius"></input><br>
+</form>
+<script>
+function processradius() {
+  var pi = Math.PI
+  var radius = document.getElementById("radius").value
+  var area = pi*radius*radius
+  var perimeter = 2*pi*radius
+  alert ("Area = " + area + ". Perimeter = " + perimeter)
+}
+</script>
+<button onclick=processradius()>Submit</button>
+</body>
+</html>

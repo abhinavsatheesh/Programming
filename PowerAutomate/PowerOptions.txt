@@ -1,0 +1,10 @@
+Display.ShowMessage Title: $'''Shut down computer?''' Message: $'''Shut down this computer?''' Icon: Display.Icon.Question Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed
+IF ButtonPressed = $'''OK''' THEN
+    System.ShutdownComputer ShutdownOption: System.ShutdownOption.Shutdown Force: False
+ELSE
+    Display.ShowMessage Title: $'''Log off user?''' Message: $'''Log off current user?
+''' Icon: Display.Icon.Question Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed1
+    IF ButtonPressed1 = $'''OK''' THEN
+        System.LogOffUser Force: False
+    END
+END

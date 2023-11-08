@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c8a7ad02-889c-40a2-ba3c-5b21df040c8d": {
+      "ProjectGuid": "c8a7ad02-889c-40a2-ba3c-5b21df040c8d",
+      "DisplayName": "LeapYearChecker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

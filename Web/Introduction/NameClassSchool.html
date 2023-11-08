@@ -1,0 +1,29 @@
+<! -- write a program to accept your name, class, division, school and print them -- !>
+<html>
+<head>
+<title>Name, Class, School</title>
+</head>
+<body>
+<form>
+	<label for="name">Enter your name</label>
+	<input type="text" id="name" name="name"><br><br>
+	<label for="class">Enter your class and division</label>
+	<input type="text" id="classes" name="classes"><br><br>
+	<label for="school">Enter your school</label>
+	<input type="text" id="school" name="school"><br><br>
+</form>
+<script>
+
+function processnameclassschool() {
+  var nameofperson = document.getElementById("name").value;
+  var classanddivision = document.getElementById("classes").value;
+  var schoolofperson = document.getElementById("school").value;
+  alert("Your name is : " + nameofperson);
+  alert("Your class and division is : " + classanddivision)
+  alert("Your school is : " + schoolofperson)
+}
+
+</script>
+<button onclick="processnameclassschool()">Submit</button>
+</body>
+</html>

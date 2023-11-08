@@ -1,0 +1,9 @@
+Rem to find area and perimeter with inputs from the user
+Print "Program to find area and perimeter with inputs from the user"
+Input "Enter the side of a square", S
+Area=S*S
+Perimeter=4*S
+Print "The area of the square is = ";
+Print Area
+Print "The perimeter of the square is = ";
+Print Perimeter

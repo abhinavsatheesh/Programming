@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8deff020-2809-4d29-926f-e78fd170ff74": {
+      "ProjectGuid": "8deff020-2809-4d29-926f-e78fd170ff74",
+      "DisplayName": "LiveStockMarket with Windows Forms",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

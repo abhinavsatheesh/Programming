@@ -1,0 +1,12 @@
+#Program to find out the total marks recieved in a subject and its Percentage
+sciencechoice=int(input('Enter the marks recieved for Science.'))
+socialchoice=int(input('Enter the marks recieved for Social.'))
+mathschoice=int(input('Enter the marks recieved for Maths.'))
+englishchoice=int(input('Enter the marks recieved for English.'))
+hindichoice=int(input('Enter the marks recieved for Hindi.'))
+sanskritchoice=int(input('Enter the marks recieved for Sanskrit.'))
+totalchoice=int(sciencechoice+socialchoice+mathschoice+englishchoice+hindichoice+sanskritchoice)
+howmuchchoice=int(input('Enter the total marks for an exam.'))
+percentagechoice=int((totalchoice/howmuchchoice)*100)
+print ('Your total marks in exams is', totalchoice)
+print ('Your mark percentage in exams is', percentagechoice, '%')

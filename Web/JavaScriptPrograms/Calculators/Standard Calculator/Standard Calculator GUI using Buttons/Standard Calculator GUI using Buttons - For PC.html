@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Standard Calculator</title>
+</head>
+<style>
+.calculator {
+height: 50px;
+width: 516px;
+}
+
+.zerostyle {
+height: 50px;
+width: 205px; 
+}
+
+.button { 
+height: 50px; 
+width: 100px; 
+} 
+.button3 {font-size: 20px;}
+</style>
+<body>
+<h1>Standard Calculator</h1>
+
+<form>
+<input type="text" id="numbers" name="numbers" class="calculator button3"></input>
+
+</form>
+
+<form>
+<button class="button button3" onclick=dis("7")>7</button>
+<button class="button button3" onclick=dis("8")>8</button>
+<button class="button button3" onclick=dis("9")>9</button>
+<button class="button button3" onclick=dis("/")>/</button>
+<button class="button button3" onclick=dis("*")>*</button>
+</form>
+
+<form>
+<button class="button button3" onclick=dis("4")>4</button>
+<button class="button button3" onclick=dis("5")>5</button>
+<button class="button button3" onclick=dis("6")>6</button>
+<button class="button button3" onclick=dis("-")>-</button>
+<button class="button button3" onclick=dis("%")>%</button>
+</form>
+
+<form>
+<button class="button button3" onclick=dis("1")>1</button>
+<button class="button button3" onclick=dis("2")>2</button>
+<button class="button button3" onclick=dis("3")>3</button>
+<button class="button button3" onclick=dis("+")>+</button>
+<button class="button button3">CE</button>
+</form>
+
+<form>
+<button class="zerostyle button3" onclick=dis("0")>0</button>
+<button class="decimal button button3" onclick=dis(".")>.</button>
+<button class="zerostyle button3" onclick=solve()>=</button>
+
+</form>
+
+<script>
+function dis(val) {
+  document.getElementById("numbers").value+=val
+  event.preventDefault()
+}
+
+function solve() {
+  var tocalculate = document.getElementById("numbers").value
+  var calculate = eval(tocalculate)
+  document.getElementById("numbers").value = calculate
+  event.preventDefault()
+}
+</script>
+</body>
+</html>

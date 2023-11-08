@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Energy Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Energy Converter</h1>
+            <label for="joules">Joules</label>
+            <input name="joules" id="joules" type="text" placeholder="0" oninput="joulesChanged()">
+            <br><br>
+            <label for="kilojoules">Kilojoules</label>
+            <input name="kilojoules" id="kilojoules" type="text" placeholder="0" oninput="kilojoulesChanged()">
+            <br><br>
+            <label for="unit" title="Usually used in Electricity Calculation">Unit (Kilowatt Hour)</label>
+            <input name="unit" id="unit" type="text" placeholder="0" oninput="unitChanged()">
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+    function joulesChanged() {
+        var joules = document.getElementById("joules").value;
+        var kilojoules = joules / 1000;
+        var unit = joules / 3600000;
+        document.getElementById("kilojoules").value = kilojoules;
+        document.getElementById("unit").value = unit;
+    }
+    function kilojoulesChanged() {
+        var kilojoules = document.getElementById("kilojoules").value;
+        var joules = kilojoules * 1000;
+        var unit = kilojoules / 3600;
+        document.getElementById("joules").value = joules;
+        document.getElementById("unit").value = unit;
+    }
+    function unitChanged() {
+        var unit = document.getElementById("unit").value;
+        var joules = unit * 3600000;
+        var kilojoules = joules / 1000;
+        document.getElementById("joules").value = joules;
+        document.getElementById("kilojoules").value = kilojoules;
+    }
+    function reset() {
+        document.getElementById("joules").value = "";
+        document.getElementById("kilojoules").value = "";
+        document.getElementById("unit").value = "";
+    }
+    </script>
+</html>

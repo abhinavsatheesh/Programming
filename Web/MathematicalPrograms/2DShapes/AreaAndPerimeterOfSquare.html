@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Area and Perimeter of Square</title>
+</head>
+<body>
+<form>
+  <label for="side">Enter the Side</label>
+  <input type="text" id="side" name="side"></input><br>
+</form>
+<script>
+function processareaperimeter() {
+  var side = parseInt(document.getElementById("side").value)
+  var area = parseInt(side*side)
+  var perimeter = parseInt(4*side)
+  alert("Area = " + area + " sq.cm. Perimeter = " + perimeter + " cm.")
+}
+</script>
+<button onclick=processareaperimeter()>Submit</button>
+</body>
+</html>

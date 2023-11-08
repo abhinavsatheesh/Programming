@@ -1,0 +1,45 @@
+<! -- Program to find Area of Triangle -- !>
+<html>
+<head>
+<title>Area and Perimeter of Triangle</title>
+</head>
+<body>
+
+<h1>Perimeter of Triangle</h1>
+<form>
+  <label for="side1">Enter the length of 1st Side</label>
+  <input type="text" id="side1" name="side1"></input><br><br>
+  <label for="side2">Enter the length of 2nd Side</label>
+  <input type="text" id="side2" name="side2"></input><br><br>
+  <label for="side3">Enter the length of 3rd Side</label>
+  <input type="text" id="side3" name="side3"></input><br><br>
+<script>
+function perimeteroftriangle() {
+  var side1oftriangle = parseInt(document.getElementById("side1").value)
+  var side2oftriangle = parseInt(document.getElementById("side2").value)
+  var side3oftriangle = parseInt(document.getElementById("side3").value)
+  var perimeter = parseInt(side1oftriangle+side2oftriangle+side3oftriangle)
+  alert("Perimeter of the Triangle is " + perimeter + " cm.")  
+}
+</script>
+<button onclick=perimeteroftriangle()>Submit</button>
+</form>
+
+<h1>Area of Triangle</h1>
+<form>
+  <label for="breadth">Enter the breadth</label>
+  <input type="text" id="breadth" name="breadth"></input><br><br>
+  <label for="height">Enter the height</label>
+  <input type="text" id="height" name="height"></input><br><br>
+<script>
+function area() {
+  var breadthoftriangle = parseInt(document.getElementById("breadth").value)
+  var heightoftriangle = parseInt(document.getElementById("height").value)
+  var area = (breadthoftriangle*heightoftriangle)/2
+  alert("Area of the Triangle is " + area + " sq.cm.")
+}
+</script>
+<button onclick=area()>Submit</button>
+</form>
+</body>
+</html>

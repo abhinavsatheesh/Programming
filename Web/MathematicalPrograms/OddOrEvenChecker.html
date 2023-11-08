@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Odd or Even Checker</title>
+</head>
+<body>
+<form>
+  <label for="num">Enter a number</label>
+  <input type="text" id="num" name="num"></input><br>
+</form>
+<script>
+function processoddeven() {
+  var number = parseInt(document.getElementById("num").value)
+  if (number%2 === 0) {
+    alert("Your number " + number + " is even")
+  }
+  else {
+    alert("Your number " + number + " is odd")
+  }
+}
+</script>
+<button onclick=processoddeven()>Submit</button>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Standard Calculator</title>
+</head>
+<body>
+<h1>Standard Calculator</h1>
+<form>
+  <label for="num">Enter the Mathematical Expression you want to evaluate</label>
+  <input type="text" id="numbesr" name="numbesr"></input><br>
+</form>
+<script>
+function processtext() {
+  var tocalculate = document.getElementById("numbesr").value
+  var calculate = eval(tocalculate)
+  alert("Your answer is " + calculate)
+}
+</script>
+<button onclick=processtext()>Submit</button>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Power Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Power Converter</h1>
+            <label for="watt">Watts</label>
+            <input name="watt" id="watt" placeholder="0" oninput="wattChanged()"></input>
+            <br><br>
+            <label for="kilowatt">Kilowatts</label>
+            <input name="kilowatt" id="kilowatt" placeholder="0" oninput="kilowattChanged()"></input>
+            <br><br>
+            <label for="horsepower">Horse Power (hp)</label>
+            <input name="horsepower" id="horsepower" placeholder="0" oninput="horsepowerChanged()"></input>
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function wattChanged() {
+            var watts = document.getElementById("watt").value;
+            var kilowatts = watts/1000;
+            var horsepower = watts/746;
+            document.getElementById("kilowatt").value = kilowatts;
+            document.getElementById("horsepower").value = horsepower;
+        }
+        function kilowattChanged() {
+            var kilowatts = document.getElementById("kilowatt").value;
+            var watts = kilowatts*1000;
+            var horsepower = kilowatts/0.746;
+            document.getElementById("watt").value = watts;
+            document.getElementById("horsepower").value = horsepower;
+        }
+        function horsepowerChanged() {
+            var horsepower = document.getElementById("horsepower").value;
+            var watts = horsepower*746;
+            var kilowatts = horsepower*0.746;
+            document.getElementById("watt").value = watts;
+            document.getElementById("kilowatt").value = kilowatts;
+        }
+        function reset() {
+            document.getElementById("watt").value = ""
+            document.getElementById("kilowatt").value = ""
+            document.getElementById("horsepower").value = ""
+        }
+    </script>
+</html>

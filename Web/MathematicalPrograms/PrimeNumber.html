@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Prime Number</title>
+</head>
+<body>
+<form>
+  <label for="num">Enter a number between 2 and 10</label>
+  <input type="text" id="num" name="num"></input><br>
+</form>
+<script>
+function processprimenumber() {
+  var number = parseInt(document.getElementById("num").value)
+  if (number>10 || number<2) {
+    alert("This is a number off limits. Retry again.")
+  }
+  else {
+    if (number%2 === 0 && number>2) {
+	  alert(number + " is not a Prime Number")
+	}  
+	else if (number%3 === 0 && number!=3) {
+      alert(number + " is a Prime Number")
+    }	
+	else {
+	  alert(number + " is a Prime Number")
+	}
+  }
+}
+</script>
+<button onclick=processprimenumber()>Submit</button>
+</body>
+</html>

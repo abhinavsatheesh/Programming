@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Angle Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #4D6FCF;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #6e93fa}
+
+        .button:active {
+            background-color: #132d66;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <body>
+        <center>
+            <h1>Angle Converter</h1>
+            <br>
+            <label for="degree">Degrees</label>
+            <input type="text" id="degree" name="degree" placeholder="0" oninput="degreeChanged()"></input>
+            <br><br>
+            <label for="radian">Radians</label>
+            <input type="text" id="radian" name="radian" placeholder="0" oninput="radianChanged()"></input>
+            <br><br>
+            <label for="gradian">Gradians</label>
+            <input type="text" id="gradian" name="gradian" placeholder="0" oninput="gradianChanged()"></input>
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="goBack()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function degreeChanged(){  
+            var degree = document.getElementById("degree").value;
+            var radian = degree * (Math.PI / 180);
+            var gradian = degree * (200 / 180);
+            document.getElementById("radian").value = radian;
+            document.getElementById("gradian").value = gradian;
+        };
+        function radianChanged() {
+            var radian = document.getElementById("radian").value;
+            var degree = radian*(180/Math.PI);
+            var gradian = radian*(200/Math.PI);
+            document.getElementById("degree").value = degree;
+            document.getElementById("gradian").value = gradian;
+        }
+        function gradianChanged() {
+            var gradian = document.getElementById("gradian").value;
+            var degree = gradian*(180/200);
+            var radian = gradian*(Math.PI/200);
+            document.getElementById("degree").value = degree;
+            document.getElementById("radian").value = radian;
+        }
+        function goBack() {
+            window.history.back();
+        }
+        function reset() {
+            document.getElementById("degree").value = "";
+            document.getElementById("radian").value = "";
+            document.getElementById("gradian").value = "";
+        }
+    </script>
+</html>

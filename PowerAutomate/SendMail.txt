@@ -1,0 +1,41 @@
+LABEL Front
+Display.InputDialog Title: $'''Welcome to Email Sender''' Message: $'''Enter a Mail Address to send a mail to''' DefaultValue: UserInput InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+Display.InputDialog Title: $'''Enter a subject for the Mail''' Message: $'''Enter a subject for the Mail to %UserInput%''' DefaultValue: UserInput2 InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput2 ButtonPressed=> ButtonPressed2
+Display.InputDialog Title: $'''Enter a message for the Mail''' Message: $'''Enter a message for the Mail to %UserInput%''' DefaultValue: UserInput3 InputType: Display.InputType.Multiline IsTopMost: False UserInput=> UserInput3 ButtonPressed=> ButtonPressed3
+Display.InputDialog Title: $'''Enter an Account to send the Mail''' Message: $'''Enter an Outlook Account Mail ID to send the Mail from''' DefaultValue: UserInput4 InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput4 ButtonPressed=> ButtonPressed4
+Display.ShowMessageDialog.ShowMessage Title: $'''Attachment Selector''' Message: $'''Do you wish to attach any attachments for the Mail to %UserInput%''' Icon: Display.Icon.Question Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed5
+IF ButtonPressed5 = $'''OK''' THEN
+    Display.SelectFileDialog.SelectFiles Title: $'''Select any attachments''' IsTopMost: False CheckIfFileExists: False SelectedFiles=> SelectedFiles ButtonPressed=> ButtonPressed6
+    Display.ShowMessageDialog.ShowMessage Title: $'''Confirm Mail?''' Message: $'''Alright. We have managed to keep a summary of the Mail. Just go through it, and if you think that you are ready to send it, press OK.
+
+From : %UserInput4%
+To : %UserInput%
+Subject : %UserInput2%
+Message : %UserInput3%
+Attachments : %SelectedFiles%
+
+Ready to send it?''' Icon: Display.Icon.Question Buttons: Display.Buttons.YesNo DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed7
+    IF ButtonPressed7 = $'''Yes''' THEN
+        Outlook.Launch Instance=> OutlookInstance
+        Outlook.SendEmailThroughOutlook.SendEmail Instance: OutlookInstance Account: UserInput4 SendTo: UserInput Subject: UserInput2 Body: UserInput3 IsBodyHtml: False Attachments: SelectedFiles
+        Display.ShowMessageDialog.ShowMessage Title: $'''Mail sent''' Message: $'''Your email has been sent successfully. ''' Icon: Display.Icon.Information Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed8
+    ELSE
+        GOTO Front
+    END
+ELSE
+    Display.ShowMessageDialog.ShowMessage Title: $'''Confirm Mail?''' Message: $'''Alright. We have managed to keep a summary of the Mail. Just go through it, and if you think that you are ready to send it, press OK.
+
+From : %UserInput4%
+To : %UserInput%
+Subject : %UserInput2%
+Message : %UserInput3%
+
+Ready to send it?''' Icon: Display.Icon.Question Buttons: Display.Buttons.YesNo DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed7
+    IF ButtonPressed7 = $'''Yes''' THEN
+        Outlook.Launch Instance=> OutlookInstance
+        Outlook.SendEmailThroughOutlook.SendEmail Instance: OutlookInstance Account: UserInput4 SendTo: UserInput Subject: UserInput2 Body: UserInput3 IsBodyHtml: False Attachments: SelectedFiles
+        Display.ShowMessageDialog.ShowMessage Title: $'''Mail sent''' Message: $'''Your email has been sent successfully. ''' Icon: Display.Icon.Information Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed8
+    ELSE
+        GOTO Front
+    END
+END

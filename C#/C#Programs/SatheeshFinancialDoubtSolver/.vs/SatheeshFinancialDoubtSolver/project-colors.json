@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ba12a638-0152-4b84-b66f-f7e35d455d89": {
+      "ProjectGuid": "ba12a638-0152-4b84-b66f-f7e35d455d89",
+      "DisplayName": "SatheeshFinancialDoubtSolver",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

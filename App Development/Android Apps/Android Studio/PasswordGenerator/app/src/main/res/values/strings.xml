@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Password Generator</string>
+    <string name="password_generator">Password Generator</string>
+    <string name="hi_welcome_to_password_generator">Hi. Welcome to Password Generator</string>
+    <string name="generate_a_new_password">Generate a new Password</string>
+    <string name="copy_password">Copy Password</string>
+</resources>

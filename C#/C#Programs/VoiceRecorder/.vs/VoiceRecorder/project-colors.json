@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9f1aa6e1-a068-4ce6-9be9-cd4591ffbebe": {
+      "ProjectGuid": "9f1aa6e1-a068-4ce6-9be9-cd4591ffbebe",
+      "DisplayName": "VoiceRecorder",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

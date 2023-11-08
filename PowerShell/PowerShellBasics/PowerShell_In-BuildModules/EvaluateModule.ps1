@@ -1,0 +1,1 @@
+Invoke-Expression "10*10*10"

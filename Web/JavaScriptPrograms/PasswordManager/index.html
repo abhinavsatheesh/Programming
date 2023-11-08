@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Password Manager</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta charset="UTF-8">
+        <meta name="description" content="Password Manager - Manage or Generate your Passwords with Ease">
+        <meta name="keywords" content="password, generator, secure">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="Assets/icon-512x512.png">
+        <link rel="apple-touch-icon" href="Assets/icon-72x72.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-96x96.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-128x128.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-144x144.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-152x152.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-384x384.png" />
+        <link rel="apple-touch-icon" href="Assets/icon-512x512.png" />
+        <meta name="apple-mobile-web-app-status-bar" content="#f69435" />
+        <meta name="theme-color" content="#f69435" />
+        <link rel='manifest' href='manifest.json'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body onload="checkIFRegistered()">
+    <center>
+        <h1>Password Manager</h1>
+        <button class="button" onclick="window.location.href='Pages/PasswordGenerator.html'">Generate a New Password</button>
+        <br><br>
+        <button class="button" onclick="checkForMasterPassword()">View your Passwords</button>
+        <br><br>
+        <button class="button" onclick="window.location.href='Pages/MasterPasswordPage.html'">Change Master Password</button>
+        <br><br>
+        <button class="button" onclick="reset()">Reset Password Manager</button>
+        <br><br>
+        <div id="passwords">
+
+        </div>
+    </center>
+    </body>
+
+    <script src="secure.js" crossorigin="anonymous"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("[PWA Builder] active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("pwabuilder-sw.js", {
+                scope: "./"
+            })
+            .then(function (reg) {
+                console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+        }
+        var instance = false;
+        function reset()
+        {
+            var alee = confirm("Are you sure you want to reset your Password Manager? This will delete all your passwords and cannot be undone.");
+            if (alee == true)
+            {
+                localStorage.removeItem("masterPassword")
+                localStorage.removeItem("savedPasswords")
+            }
+            alert("Password Manager has been reset.")
+            window.location.reload()
+        }
+        function checkIFRegistered()
+        {
+            var masterPassword = localStorage.getItem("masterPassword")
+            if(masterPassword == null)
+            {
+                alert("Welcome to Password Manager - The App Developed to maintain your Passwords. Let's get you started by setting a Master Password")
+                window.location.href = "Pages/MasterPasswordPage.html"
+            }
+            else if (masterPassword == "null")
+            {
+                window.location.href = "Pages/MasterPasswordPage.html"
+            }
+            else if (masterPassword == "")
+            {
+                window.location.href = "Pages/MasterPasswordPage.html"
+            }
+        }
+        function getPasswords()
+        {
+            var savedPasswords = localStorage.getItem("savedPasswords")
+            if (savedPasswords == null)
+            {
+                const Text = document.createElement("h4")
+                Text.innerHTML = "No Passwords Saved"
+                document.getElementById("passwords").appendChild(Text)
+            }
+            else
+            {
+                var passwords = savedPasswords.split(",");
+                const Text = document.createElement("h1")
+                Text.innerHTML = "Your Passwords are :-" 
+                document.getElementById("passwords").appendChild(Text)
+                for (var i = 0; i < passwords.length; i++)
+                {
+                    var passwordNickname = passwords[i].split(":")[0]
+                    var password = passwords[i].split(":")[1]
+                    password = CryptoJS.AES.decrypt(password, "password").toString(CryptoJS.enc.Utf8)
+                    const duv = document.createElement("div");
+                    const node = document.createTextNode(passwordNickname + " : " + password)
+                    duv.appendChild(node)
+                    document.getElementById("passwords").appendChild(duv)
+                }
+            }
+        }
+        function checkForMasterPassword()
+        {
+            if (instance == true)
+            {
+
+            }
+            else
+            {
+                var password = localStorage.getItem("masterPassword");
+                if(password != null)
+                {
+                    var passUser = prompt("Enter your master password");
+                    if (passUser == password)
+                    {
+                        alert("Welcome back!")
+                        getPasswords();
+                        instance = true;
+                    }
+                    else
+                    {
+                        alert("Failed to authenticate you")
+                    }
+                }
+                else
+                {
+                    document.location.href="Pages/MasterPasswordPage.html"
+                }
+            }
+            
+        }
+    </script>
+</html>

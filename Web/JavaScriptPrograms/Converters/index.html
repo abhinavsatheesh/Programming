@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Converters</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="icon" href="Assets/Icon-512x512.png">
+        <link rel="apple-touch-icon" href="Assets/Icon-72x72.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-96x96.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-128x128.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-144x144.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-152x152.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-192x192.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-384x384.png" />
+        <link rel="apple-touch-icon" href="Assets/Icon-512x512.png" />
+        <meta name="apple-mobile-web-app-status-bar" content="#f69435" />
+        <meta name="theme-color" content="#f69435" />
+        <link rel='manifest' href='manifest.json'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Converters</h1>
+            <button class="button" id="currency-button">Currency</button>
+            <br><br>
+            <button class="button" id="angle-button">Angles</button>
+            <button class="button" id="area-button">Area</button>
+            <button class="button" id="data-button">Data</button>
+            <br><br>
+            <button class="button" id="energy-button">Energy</button>
+            <button class="button" id="length-button">Length</button>
+            <br><br>
+            <button class="button" id="massweight-button">Mass & Weight</button>
+            <br><br>
+            <button class="button" id="power-button">Power</button>  
+            <button class="button" id="pressure-button">Pressure</button>
+            <button class="button" id="speed-button">Speed</button>
+            <br><br>
+            <button class="button" id="temperature-button">Temperature</button>
+            <button class="button" id="volume-button">Volume</button>
+            <br><br>
+        </center>
+        
+    </body>
+    <script>
+        if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("[PWA Builder] active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("pwabuilder-sw.js", {
+                scope: "./"
+            })
+            .then(function (reg) {
+                console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+        }
+        var buttonCurrency = document.getElementById("currency-button");
+        buttonCurrency.addEventListener("click", function() {
+            window.location.href = "Converters/Currency.html";
+        });
+        var buttonAngles = document.getElementById("angle-button");
+        buttonAngles.addEventListener("click", function() {
+            window.location.href = "Converters/Angle.html";
+        });
+        var buttonArea = document.getElementById("area-button");
+        buttonArea.addEventListener("click", function() {
+            window.location.href = "Converters/Area.html";
+        });
+        var buttonData = document.getElementById("data-button");
+        buttonData.addEventListener("click", function() {
+            window.location.href = "Converters/Data.html";
+        });
+        var buttonEnergy = document.getElementById("energy-button");
+        buttonEnergy.addEventListener("click", function() {
+            window.location.href = "Converters/Energy.html";
+        });
+        var buttonLength = document.getElementById("length-button");
+        buttonLength.addEventListener("click", function() {
+            window.location.href = "Converters/Length.html";
+        });
+        var buttonMassWeight = document.getElementById("massweight-button");
+        buttonMassWeight.addEventListener("click", function() {
+            window.location.href = "Converters/MassWeight.html";
+        });
+        var buttonPower = document.getElementById("power-button");
+        buttonPower.addEventListener("click", function() {
+            window.location.href = "Converters/Power.html";
+        });
+        var buttonPressure = document.getElementById("pressure-button");
+        buttonPressure.addEventListener("click", function() {
+            window.location.href = "Converters/Pressure.html";
+        });
+        var buttonSpeed = document.getElementById("speed-button");
+        buttonSpeed.addEventListener("click", function() {
+            window.location.href = "Converters/Speed.html";
+        });
+        var buttonTemperature = document.getElementById("temperature-button");
+        buttonTemperature.addEventListener("click", function() {
+            window.location.href = "Converters/Temperature.html";
+        });
+        var buttonVolume = document.getElementById("volume-button");
+        buttonVolume.addEventListener("click", function() {
+            window.location.href = "Converters/Volume.html";
+        });
+    </script>
+</html>

@@ -1,0 +1,24 @@
+<! -- Program to find Area and Perimter of Rectangle -- !>
+<html>
+<head>
+<title>Area and Perimeter of Rectangle</title>
+</head>
+<body>
+<form>
+  <label for="length">Enter a Length measure</label>
+  <input type="text" id="length" name="length"></input><br><br>
+  <label for="breadth">Enter a Breadth measure</label>
+  <input type="text" id="breadth" name="breadth"></input><br>
+</form>
+<script>
+function processareaperimeter() {
+  var lengthofrectangle = parseInt(document.getElementById("length").value)
+  var breadthofrectangle = parseInt(document.getElementById("breadth").value)
+  var perimeter = parseInt(2*(lengthofrectangle+breadthofrectangle))
+  var area = parseInt(lengthofrectangle*breadthofrectangle)
+  alert ("Perimter = " + perimeter + " cm. Area = " + area + " sq.cm.")   
+}
+</script>
+<button onclick=processareaperimeter()>Submit</button>
+</body>
+</html>

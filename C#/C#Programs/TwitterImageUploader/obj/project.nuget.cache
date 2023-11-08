@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YiGS4q2QKI6D/Jd8aLNzZWN92W+E76Z8mC8O7Ct9LjUjtCyxDNxMhupXitmparOJNKhBBJLSyjWiMPS46aB0rA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dell\\OneDrive\\abhinavsatheesh\\C#\\C#Programs\\TwitterImageUploader\\TwitterImageUploader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\imgur.api\\5.0.0\\imgur.api.5.0.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}

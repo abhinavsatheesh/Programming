@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Volume of Cuboid</title>
+</head>
+<body>
+
+<h1>Base Area - Height Method</h1>
+<form>
+  <label for="basearea">Enter the Base Area of the Cuboid</label>
+  <input type="text" id="basearea" name="basearea"></input><br><br>
+  <label for="height">Enter a Height measure</label>
+  <input type="text" id="height" name="height"></input><br><br>
+ 
+<script>
+function processbaseareaheight() {
+  var baseareaofCuboid = parseInt(document.getElementById("basearea").value)
+  var heightofCuboid = parseInt(document.getElementById("height").value)
+  var volume = parseInt(baseareaofCuboid*heightofCuboid)
+  alert("Volume of the Cuboid is " + volume + " cm cube")
+}
+</script>
+<button onclick=processbaseareaheight()>Submit</button>
+</form>
+
+<h1>Length-Breadth-Height Method</h1>
+<form>
+  <label for="length">Enter the measure of the Length</label>
+  <input type="text" id="length" name="length"></input><br><br>
+  <label for="breadth">Enter the measure of the Breadth</label>
+  <input type="text" id="breadth" name="breadth"></input><br><br>
+  <label for="height">Enter the measure of the Height</label>
+  <input type="text" id="heightc" name="height"></input><br><br>
+<script>
+function processlbh() {
+  var lengthofCuboid = parseInt(document.getElementById("length").value)
+  var breadthofCuboid = parseInt(document.getElementById("breadth").value)
+  var heightofCuboid = parseInt(document.getElementById("heightc").value)
+  var volumeofcuboid = parseInt(lengthofCuboid*breadthofCuboid*heightofCuboid)
+  alert("Volume of the Cuboid is " + volumeofcuboid + " cm cube")
+}
+</script>
+<button onclick=processlbh()>Submit</button>
+</form>
+</body>
+</html>

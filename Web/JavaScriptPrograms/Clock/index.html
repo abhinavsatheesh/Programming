@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Clock</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Images/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.js"></script>
+    </head>
+    <style>
+        *{padding:0;margin:0;}
+        .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#0C9;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 3px #999;
+        }
+        .my-float{
+        margin-top:22px;
+        }
+        .button {
+        padding: 10px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        }
+        .button:hover {background-color: #6e93fa}
+        .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        }
+    </style>
+    <body>
+        <center>
+            <h1>Clock</h1>
+        </center>
+        <a href="javascript:checkForAlarms()" class="float">
+        <i class="fa fa-plus my-float"></i>
+        </a>
+        <br>
+        <form>
+            <label for="alarm-name">Alarm Name : </label>
+            <input for="alarm-name" id="alarm-name" value="Alarm (1)"></input>
+            <br><br>
+            <label for="alarm-time">Alarm Time : </label>
+            <input type="time" for="alarm-time" id="alarm-time"></input>
+            <br><br>
+            <button class="button" onclick="processtime()">Add Alarm</button>
+        </form>
+        <script>
+            function debug(data) {
+                console.log(data)
+            }
+            function processtime() {
+              var alarm_setTime = document.getElementById("alarm-time").value
+              if (alarm_setTime == "") {
+                alert("Please enter the Alarm Time")
+              }
+              var d = new Date();
+              var alarm_currentTime = d.getHours() + ":" + d.getMinutes()
+              var alarm_currentTime = new Date("01/01/2007 " + alarm_currentTime)
+              var alarm_setTime = new Date("01/01/2007 " + alarm_setTime)
+              var difference = alarm_setTime - alarm_currentTime
+              console.log(difference)
+              setTimeout(alarm, difference)
+              event.preventDefault();
+            }
+            function alarm() {
+                console.log("Time for Alarm")
+                console.log("Play ringtone")
+                var audio = new Audio('Assets/alarm-sound.wav');
+                audio.play();
+            }
+        </script>
+    </body>
+</html>
+</html>

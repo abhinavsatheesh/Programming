@@ -1,0 +1,21 @@
+<!-- Convert your height from centimetres to inches and feet !-->
+<html>
+<head>
+<title>Centimetres to Foot and Inches</title>
+</head>
+<body>
+<form>
+  <label for="height">Enter your height</label>
+  <input type="text" id="height" name="height"></input><br>
+</form>
+<script>
+function processheight() {
+  var heightofperson = parseFloat(document.getElementById("height").value)
+  var inchesofperson = parseFloat(heightofperson/2.54)
+  var feetofperson = parseFloat(heightofperson/30.48)
+  alert("Height in inches = " + inchesofperson + ". Height in feet = " + feetofperson)
+}
+</script>
+<button onclick=processheight()>Submit</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- Program to check whether a number is divisible by a number or not !-->
+<html>
+<head>
+<title>Divisibility Checker</title>
+</head>
+<body>
+<form>
+  <label for="number">Enter a number</label>
+  <input type="text" id="number" name="number"></input><br><br>
+  <label for="numberd">Enter a number by which the above number should be divided</label>
+  <input type="text" id="numberd" name="numberd"></input><br>
+</form>
+<script>
+function divisiblitychecker() {
+  var numberper = parseInt(document.getElementById("number").value)
+  var numberdiv = parseInt(document.getElementById("numberd").value)
+  var numberzero = parseInt(0)
+  if (numberper%numberdiv === numberzero) {
+     alert("Your number " + numberper + " is divisible by " + numberdiv)
+  }
+  else {
+     alert("Your number " + numberper + " is not divisible by " + numberdiv)
+  }
+}
+</script>
+<button onclick=divisiblitychecker()>Submit</button>
+</body>
+</html>

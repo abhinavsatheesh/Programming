@@ -1,0 +1,16 @@
+Display.InputDialog Title: $'''Temple Notebook''' Message: $'''Welcome to Temple Notebook! First off, enter the Name of the Temple ''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+IF IsEmpty(UserInput) THEN
+    Display.InputDialog Title: $'''Temple Notebook''' Message: $'''Welcome to Temple Notebook! First off, enter the Name of the Temple ''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed
+END
+Display.InputDialog Title: $'''Temple Notebook''' Message: $'''Enter the Content of the Temple''' InputType: Display.InputType.Multiline IsTopMost: False UserInput=> UserInput2 ButtonPressed=> ButtonPressed2
+IF IsEmpty(UserInput) THEN
+    Display.InputDialog Title: $'''Temple Notebook''' Message: $'''Enter the Content of the Temple''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput2 ButtonPressed=> ButtonPressed
+END
+Folder.GetSpecialFolder SpecialFolder: Folder.SpecialFolder.DesktopDirectory SpecialFolderPath=> SpecialFolderPath
+IF (Folder.IfFolderExists.Exists Path: $'''%SpecialFolderPath%\\TempleData''') THEN
+ELSE
+    Folder.Create FolderPath: SpecialFolderPath FolderName: $'''TempleData''' Folder=> NewFolder
+END
+File.WriteText File: $'''%SpecialFolderPath%\\TempleData\\%UserInput%.txt''' TextToWrite: UserInput2 AppendNewLine: True IfFileExists: File.IfFileExists.Overwrite Encoding: File.FileEncoding.Unicode
+ON ERROR REPEAT 3 TIMES WAIT 1
+END

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Data Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converters - Convert a unit to another unit">
+        <meta name="keywords" content="converters, conversion, units, measurement, measurement conversion">
+        <meta name="author" content="Abhinav Satheesh">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../Icons/Icon-144x144.png">
+    </head>
+    <style>
+    .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4D6FCF;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #6e93fa}
+
+    .button:active {
+        background-color: #132d66;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+    <body>
+        <center>
+            <h1>Data Converter</h1>
+            <label for="kilobyte">Kilobyte</label>
+            <input name="kilobyte" id="kilobyte" type="text" placeholder="0" oninput="kilobyteChanged()">
+            <br><br>
+            <label for="megabyte">Megabyte</label>
+            <input name="megabyte" id="megabyte" type="text" placeholder="0" oninput="megabyteChanged()">
+            <br><br>
+            <label for="gigabyte">Gigabyte</label>
+            <input name="gigabyte" id="gigabyte" type="text" placeholder="0" oninput="gigabyteChanged()">
+            <br><br>
+            <label for="terabyte">Terabyte</label>
+            <input name="terabyte" id="terabyte" type="text" placeholder="0" oninput="terabyteChanged()">
+            <br><br>
+            <button class="button" onclick="reset()">Reset</button>
+            <br><br>
+            <button class="button" onclick="window.history.back()">&lt; Go back</button>
+        </center>
+    </body>
+    <script>
+        function kilobyteChanged() {
+            var kilobyte = document.getElementById("kilobyte").value;
+            var megabyte = kilobyte * 0.001;
+            var gigabyte = kilobyte * 0.000001;
+            var terabyte = kilobyte * 0.000000001;
+            document.getElementById("megabyte").value = megabyte;
+            document.getElementById("gigabyte").value = gigabyte;
+            document.getElementById("terabyte").value = terabyte;
+        }
+        function megabyteChanged() {
+            var megabyte = document.getElementById("megabyte").value;
+            var kilobyte = megabyte * 1000;
+            var gigabyte = megabyte * 0.001;
+            var terabyte = megabyte * 0.000001;
+            document.getElementById("kilobyte").value = kilobyte;
+            document.getElementById("gigabyte").value = gigabyte;
+            document.getElementById("terabyte").value = terabyte;                
+        }
+        function gigabyteChanged() {
+            var gigabyte = document.getElementById("gigabyte").value;
+            var megabyte = gigabyte * 1000;
+            var kilobyte = gigabyte * 1000000;
+            var terabyte = gigabyte * 0.001;
+            document.getElementById("kilobyte").value = kilobyte;
+            document.getElementById("megabyte").value = megabyte;
+            document.getElementById("terabyte").value = terabyte;
+        }
+        function terabyteChanged() {
+            var terabyte = document.getElementById("terabyte").value;
+            var gigabyte = terabyte * 1000;
+            var megabyte = terabyte * 1000000;
+            var kilobyte = terabyte * 1000000000;
+            document.getElementById("kilobyte").value = kilobyte;
+            document.getElementById("megabyte").value = megabyte;
+            document.getElementById("gigabyte").value = gigabyte;
+        }
+        function reset() {
+            document.getElementById("kilobyte").value = "";
+            document.getElementById("megabyte").value = "";
+            document.getElementById("gigabyte").value = "";
+            document.getElementById("terabyte").value = "";
+        }
+    </script>
+</html>

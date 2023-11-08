@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Area and Perimeter of Cuboid</title>
+</head>
+<body>
+<form>
+  <label for="length">Enter a Length measure</label>
+  <input type="text" id="length" name="length"></input><br><br>
+  <label for="breadth">Enter a Breadth measure</label>
+  <input type="text" id="breadth" name="breadth"></input><br><br>
+  <label for="height">Enter a Height measure</label>
+  <input type="text" id="height" name="height"></input><br>
+  
+</form>
+<script>
+function processareaperimeter() {
+  var lengthofcuboid = parseInt(document.getElementById("length").value)
+  var breadthofcuboid = parseInt(document.getElementById("breadth").value)
+  var heightofcuboid = parseInt(document.getElementById("height").value)
+  var tsa = parseInt(2*((lengthofcuboid*breadthofcuboid)+(lengthofcuboid*heightofcuboid)+(breadthofcuboid*heightofcuboid)))
+  var perimeter = parseInt(4*(lengthofcuboid+breadthofcuboid+heightofcuboid))
+  var lsa = parseInt(2*heightofcuboid*(lengthofcuboid+breadthofcuboid))
+  alert("Perimeter of the Cuboid is " + perimeter + " cm. Total Surface Area of the Cuboid is " + tsa + " sq.cm. Lateral Surface Area of the Cuboid is " + lsa + " sq.cm.")
+}
+</script>
+<button onclick=processareaperimeter()>Submit</button>
+</body>
+</html>

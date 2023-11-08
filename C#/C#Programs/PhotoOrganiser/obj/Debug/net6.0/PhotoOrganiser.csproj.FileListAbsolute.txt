@@ -1,0 +1,15 @@
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\bin\Debug\net6.0\PhotoOrganiser.exe
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\bin\Debug\net6.0\PhotoOrganiser.deps.json
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\bin\Debug\net6.0\PhotoOrganiser.runtimeconfig.json
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\bin\Debug\net6.0\PhotoOrganiser.dll
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\bin\Debug\net6.0\PhotoOrganiser.pdb
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.csproj.AssemblyReference.cache
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.AssemblyInfoInputs.cache
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.AssemblyInfo.cs
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.csproj.CoreCompileInputs.cache
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.dll
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\refint\PhotoOrganiser.dll
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.pdb
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\PhotoOrganiser.genruntimeconfig.cache
+C:\Users\Dell\OneDrive\abhinavsatheesh\Programming\C#\C#Programs\PhotoOrganiser\obj\Debug\net6.0\ref\PhotoOrganiser.dll

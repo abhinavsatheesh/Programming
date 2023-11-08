@@ -1,0 +1,22 @@
+File.GetTempPath TempFile=> TempFile
+System.TakeScreenshotAndSaveToFile File: TempFile ImageFormat: System.ImageFormat.Png
+System.TakeScreenshot _
+Display.ShowMessage Title: $'''Screenshot captured''' Message: $'''The screenshot has been captured, and copied to your clipboard. Save the screenshot?''' Icon: Display.Icon.Question Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed4
+IF ButtonPressed4 = $'''OK''' THEN
+    Display.SelectFolder Description: $'''Select a folder to save the screenshot''' IsTopMost: False SelectedFolder=> SelectedFolder ButtonPressed=> ButtonPressed
+    Display.InputDialog Title: $'''Enter filename''' Message: $'''Enter a suitable filename for the Screenshot''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed3
+    IF (File.Exists File: $'''%SelectedFolder%%UserInput%.png''') THEN
+        Display.InputDialog Title: $'''File exists''' Message: $'''A file exists in that Directory. Enter another filename''' InputType: Display.InputType.SingleLine IsTopMost: False UserInput=> UserInput ButtonPressed=> ButtonPressed3
+        File.Copy Files: TempFile Destination: SelectedFolder IfFileExists: File.IfExists.DoNothing CopiedFiles=> CopiedFiles
+        File.Rename Files: CopiedFiles NewName: $'''%UserInput%.png''' KeepExtension: False IfFileExists: File.IfExists.DoNothing RenamedFiles=> RenamedFiles
+        File.Delete Files: TempFile
+    ELSE
+        File.Copy Files: TempFile Destination: SelectedFolder IfFileExists: File.IfExists.DoNothing CopiedFiles=> CopiedFiles
+        File.Rename Files: CopiedFiles NewName: $'''%UserInput%.png''' KeepExtension: False IfFileExists: File.IfExists.DoNothing RenamedFiles=> RenamedFiles
+        File.Delete Files: TempFile
+    END
+    Display.ShowMessage Title: $'''Screenshot saved''' Message: $'''Screenshot has been saved successfully. Open it?''' Icon: Display.Icon.Question Buttons: Display.Buttons.OKCancel DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed2
+    IF ButtonPressed2 = $'''OK''' THEN
+        System.RunApplication ApplicationPath: $'''%SelectedFolder%\\%UserInput%.png''' WorkingDirectory: SelectedFolder WindowStyle: System.ProcessWindowStyle.Normal ProcessId=> AppProcessId
+    END
+END

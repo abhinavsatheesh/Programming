@@ -1,0 +1,20 @@
+<!-- Convert given length in metres to centimetres !-->
+<html>
+<head>
+<title>Metres to Centimetres</title>
+</head>
+<body>
+<form>
+  <label for="metres">Enter the length in metres</label>
+  <input type="text" id="metres" name="metres"></input><br>
+</form>
+<script>
+function processmetrescentimetres() {
+  var metresper = parseFloat(document.getElementById("metres").value)
+  var centi = parseFloat(metresper*100)
+  alert("Length in Centimetres = " + centi + " cm")
+}
+</script>
+<button onclick=processmetrescentimetres()>Submit</button>
+</body>
+</html>

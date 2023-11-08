@@ -1,0 +1,30 @@
+<!-- Program to check whether a number is Postitive or Negative !-->
+<html>
+<head>
+<title>Positive or Negative Checker</title>
+</head>
+<body>
+<form>
+  <label for="num">Enter a number</label>
+  <input type="text" id="num" name="num"></input><br>
+</form>
+<script>
+function processpositivenegative() {
+  var number = parseInt(document.getElementById("num").value)
+  if (number>0) {
+    alert("Your number " + number + " is positive")
+  }
+  else if (number<0) {
+    alert("Your number " + number + " is negative")
+  } 
+  else if (number===0) {
+    alert("Your number 0 is neither positive or negative")
+  }	
+  else {
+    alert("Invalid Input. Try again")
+  } 
+}
+</script>
+<button onclick=processpositivenegative()>Submit</button>
+</body>
+</html>

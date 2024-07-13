@@ -3,9 +3,8 @@
     <title>Wallet</title>
     <meta name="description" content="Wallet - The app designed and developed to keep track of your Cash, Bank, and Credit Card Transactions">
     <meta name="keywords" content="wallet, finance, measurement, credit cards, cash, bank">
-    <meta name="author" content="Abhinav Satheesh">
+    <meta name="author" content="ASA Finserve">
     <link rel="apple-touch-icon" href="Assets/apple-touch-icon-iphone-60x60.png">
-    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <script src="Assets/420eab8243.js"></script>
     <link rel="apple-touch-icon" sizes="60x60" href="Assets/apple-touch-icon-ipad-76x76.png">
@@ -15,7 +14,7 @@
     <link rel='manifest' href='manifest.json'>
     <meta name="apple-mobile-web-app-status-bar" content="#f69435" />
     <meta name="theme-color" content="#f69435" />
-    <script>navigator.serviceWorker.register("/Wallet/pwabuilder-sw.js")</script> 
+    <script>navigator.serviceWorker.register("pwabuilder-sw.js")</script> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
@@ -265,12 +264,7 @@
                         <span class="item">Settings</span>
                     </a>
                 </li>
-                <li>
-                    <a href="https://wealthfolio.vercel.app/">
-                        <span class="icon"></span>
-                        <span class="item">Wealthfolio (BETA)</span>
-                    </a>
-                </li>
+
             </ul>
         </div>
         </div>
@@ -283,13 +277,11 @@
 </div>
 
 </body>
-<script src="Assets/sweetalert.min.js"></script>
 <script src="Assets/functions.js"></script>
-<script src="localforage.js"></script>
+<script src="Assets/localforage.js"></script>
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <link rel="stylesheet" src="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-
 <script>
     const collapsibleButton = document.querySelector('.collapsible-button');
 const menu = document.querySelector('.collapsible');
@@ -484,7 +476,7 @@ else
   method: "GET", // Specify the HTTP method
   headers: {
     "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rYWZlcHdjbmpjZHZuZ3Z5cmd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyMjk4NTgsImV4cCI6MjAwODgwNTg1OH0.N0WVNuW3S-6Fa6sgMfnLcvORYk7oawfEeUAdJ-IUCH8", // Replace with your API key
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rYWZlcHdjbmpjZHZuZ3Z5cmd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyMjk4NTgsImV4cCI6MjAwODgwNTg1OH0.N0WVNuW3S-6Fa6sgMfnLcvORYk7oawfEeUAdJ-IUCH8", // Replace with your access token
+"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rYWZlcHdjbmpjZHZuZ3Z5cmd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyMjk4NTgsImV4cCI6MjAwODgwNTg1OH0.N0WVNuW3S-6Fa6sgMfnLcvORYk7oawfEeUAdJ-IUCH8", // Replace with your access token
     "Content-Type": "application/json",
     "Prefer": "return=minimal",
   }
@@ -523,7 +515,7 @@ else
                         showNotification(`Payment for ${keeey} is due in ${daystogo} day(s). Amount to be paid is ₹${data[keeey]["BalanceOutstanding"]}`)
                     }
                     catch{
-                        swal("Payment due", `Payment for ${keeey} is due in ${daystogo} day(s). Amount to be paid is ₹${data[keeey]["BalanceOutstanding"]}`, "info");
+                        alert(`Payment for ${keeey} is due in ${daystogo} day(s). Amount to be paid is ₹${data[keeey]["BalanceOutstanding"]}`);
                     }
                 }
                 else if(daystogo==0 && curre.getDate()==cccc.getDate() && sessionStorage.getItem("sent")==null && data[keeey]["BalanceOutstanding"]!=0)
@@ -533,7 +525,7 @@ else
                         showNotification(`Last date for Payment of ${keeey} is today. Please pay if you have'nt already. Ignore if already paid. Amount to be paid is ₹${data[keeey]["BalanceOutstanding"]}`)
                     }
                     catch{
-                        swal("Payment due", `Last date for Payment of ${keeey} is today. Please pay if you have'nt already. Ignore if already paid. Amount to be paid is ₹${data[keeey]["BalanceOutstanding"]}`, "info");
+                        alert(`Last date for Payment of ${keeey} is today. Please pay if you have'nt already. Ignore if already paid. Amount to be paid is ₹${data[keeey]["BalanceOutstanding"]}`);
                     }
                 }
                 
@@ -554,7 +546,6 @@ else
             }
         }
         sessionStorage.setItem("sent", true)   
-            
     } 
     else
     {
@@ -565,6 +556,7 @@ else
     }
 })    
 
+    
 </script>
 <script>
     

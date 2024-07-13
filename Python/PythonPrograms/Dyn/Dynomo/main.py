@@ -52,8 +52,8 @@ try:
         else:
             file1.close()
 
-except FileExistsError:
-    pass
+except:
+    print(exc)
 
 if os.path.isfile(passworddir) == True:
     pass

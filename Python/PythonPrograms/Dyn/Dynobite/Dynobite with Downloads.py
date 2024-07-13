@@ -845,12 +845,10 @@ class MainWindow(QMainWindow):
         self._zoom_label = QLabel()
         self.statusBar().addPermanentWidget(self._zoom_label)
         self._update_zoom_label()
-
         self._bookmarksToolBar = QToolBar()
         self.addToolBar(Qt.TopToolBarArea, self._bookmarksToolBar)
         self.insertToolBarBreak(self._bookmarksToolBar)
         self._bookmark_widget.changed.connect(self._update_bookmarks)
-        self._update_bookmarks()
 
         self.page = QWebEnginePage()
 

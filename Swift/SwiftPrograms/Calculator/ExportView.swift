@@ -1,35 +1,5 @@
 import SwiftUI
 import UniformTypeIdentifiers
-
-
-
-
-// Usage example
-
-
-
-
-
-// Usage example
-
-
-// Example button action
-
-
-
-// Usage example
-
-
-
-
-
-
-// Example usage
-
-extension UTType
-{
-    static let ipa = UTType(filenameExtension: "ipa")!
-}
 struct BlueButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -39,29 +9,6 @@ struct BlueButton: ButtonStyle {
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
-    }
-}
-
-struct IPAFile: FileDocument
-{
-    let file: FileWrapper
-    
-    static var readableContentTypes: [UTType] { [.ipa] }
-    static var writableContentTypes: [UTType] { [.ipa] }
-    
-    init(ipaURL: URL) throws
-    {
-        self.file = try FileWrapper(url: ipaURL, options: .immediate)
-    }
-    
-    init(configuration: ReadConfiguration) throws 
-    {
-        self.file = configuration.file
-    }
-    
-    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper 
-    {
-        return self.file
     }
 }
 
